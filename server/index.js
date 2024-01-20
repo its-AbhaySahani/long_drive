@@ -29,13 +29,6 @@ db.once('open', () => {
 });
 
 // Routes
-const vehiclesRouter = require('./vehicles');
-app.use('/vehicles', vehiclesRouter);
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 
 
