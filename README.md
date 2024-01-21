@@ -1,13 +1,13 @@
-# long_drive
+### long_drive
 
 
-# Project Name :-  LongDrive : Peer-to-Peer Rental Platform
+### Project Name :-  LongDrive : Peer-to-Peer Rental Platform
 
-# Problem Statement :
+### Problem Statement :
 The project aims to solve the inconvenience faced by users and shop owners in managing and renting vehicals. Traditional methods lack a centralized platform for streamlined vehical listing, search, and rental processes. LongDrive addresses this by providing a user-friendly platform for renting vehicals with ease.
 
 
-# What are existing similar solutions?
+### What are existing similar solutions?
 
 - Zoomcar  https://www.zoomcar.com/
 Car rental service in India
@@ -15,7 +15,7 @@ Car rental service in India
 - Revv    https://www.revv.co.in/
 
 
-# Proposed Solution :
+### Proposed Solution :
 
 To overcome the identified problems, LongDrive will:
 
@@ -25,32 +25,20 @@ To overcome the identified problems, LongDrive will:
 4. Ensure a secure and straightforward process for users to rent vehicles.
 
 
-# Key Features :
+### Key Features :
 
-- User Authentication:
-        User registration
-        User login/logout
-        Social media authentication
+#### Admin Side :
+1. Different Signin & Sign Out Page 
 
-- Vehicle Rental Agency Features:
-        Vehicle upload (make, model, year, images, rental rates, availability)
-        Inventory management
-        Rental history tracking and reporting
 
-- User Features:
-        Vehicle search by type, location, availability, and rates
-        Rental history view
-        Secure payment processing
 
-- Vehicle Details:
-        Detailed vehicle view (make, model, year, images, rates, availability schedule, policy)
+### For Developers
+#### Used Middleware : 
+Middleware are functions that run at specific stages of a pipeline.
+![](https://cdn-media-1.freecodecamp.org/images/0*iZwmyy25FSxuxXlH.)
 
-- User Settings:
-        Profile update
-        Password change
-        Logout
 
-- User Interface:
-        Visually appealing design
-        Responsive layout
-        Intuitive navigation
+#### Used " bcrypt js " for Hashing password:
+- bcrypt is used as it provides a high level of security against attacks such as brute force attacks.
+- Type of event (‘init’, ‘validate’, ‘save’, ‘remove’)
+- A callback that is executed with this referencing the model instance
