@@ -22,3 +22,6 @@ router.use(require('../clientSideModules/signin'))
 router.use(require('../clientSideModules/signout'))
 router.use(require('../clientSideModules/getdata'))
 router.use(require('../clientSideModules/contactform'))
+
+
+module.exports = router;
