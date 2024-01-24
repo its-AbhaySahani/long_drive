@@ -26,8 +26,8 @@ router.get('/', (req, res) =>{
 
 
 // Client Side Modules ---for-- SignIn, SignUp, SignOut, Contactform
-// router.use(require('../clientSideModules/signup'))
-router.use(require('../clintSideModules/signin'))
+router.use(require('../clientSideModules/signup'))
+router.use(require('../clientSideModules/signin'))
 // router.use(require('../clientSideModules/signout'))
 // router.use(require('../clientSideModules/getdata'))
 // router.use(require('../clientSideModules/contactform'))
