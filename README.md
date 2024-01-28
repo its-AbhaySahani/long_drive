@@ -111,3 +111,12 @@ Contains all routes related to client side requests.
 
 - #### Database : conn.js
 Database used is MongoDB atlas, it's a cloud based NoSQL database provided by mongoDB
+
+
+
+
+
+
+### Class Test : Deploying server on Render
+Github Repo link : https://github.com/its-AbhaySahani/MERN-Basics
+Render Live link: https://mern-basics.onrender.com/students
