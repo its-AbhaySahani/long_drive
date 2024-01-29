@@ -1,162 +1,163 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import React, { useRef } from "react";
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { Container, Row, Col } from "reactstrap";
+import { Link, NavLink } from "react-router-dom";
+import "../../styles/header.css";
 
-function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const navLinks = [
+  {
+    path: "/home",
+    display: "Home",
+  },
+  {
+    path: "/about",
+    display: "About",
+  },
+  {
+    path: "/cars",
+    display: "Cars",
+  },
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  {
+    path: "/blogs",
+    display: "Blog",
+  },
+  {
+    path: "/contact",
+    display: "Contact",
+  },
+];
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+const Header = () => {
+  const menuRef = useRef(null);
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+    <header className="header">
+      {/* ============ header top ============ */}
+      <div className="header__top">
+        <Container>
+          <Row>
+            <Col lg="6" md="6" sm="6">
+              <div className="header__top__left">
+                <span>Need Help?</span>
+                <span className="header__top__help">
+                  <i class="ri-phone-fill"></i> +1-202-555-0149
+                </span>
+              </div>
+            </Col>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+            <Col lg="6" md="6" sm="6">
+              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                <Link to="#" className=" d-flex align-items-center gap-1">
+                  <i class="ri-login-circle-line"></i> Login
+                </Link>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+                <Link to="#" className=" d-flex align-items-center gap-1">
+                  <i class="ri-user-line"></i> Register
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* =============== header middle =========== */}
+      <div className="header__middle">
+        <Container>
+          <Row>
+            <Col lg="4" md="3" sm="4">
+              <div className="logo">
+                <h1>
+                  <Link to="/home" className=" d-flex align-items-center gap-2">
+                    <i class="ri-car-line"></i>
+                    <span>
+                      Rent Car <br /> Service
+                    </span>
+                  </Link>
+                </h1>
+              </div>
+            </Col>
+
+            <Col lg="3" md="3" sm="4">
+              <div className="header__location d-flex align-items-center gap-2">
+                <span>
+                  <i class="ri-earth-line"></i>
+                </span>
+                <div className="header__location-content">
+                  <h4>Bangladesh</h4>
+                  <h6>Sylhet City, Bangladesh</h6>
+                </div>
+              </div>
+            </Col>
+
+            <Col lg="3" md="3" sm="4">
+              <div className="header__location d-flex align-items-center gap-2">
+                <span>
+                  <i class="ri-time-line"></i>
+                </span>
+                <div className="header__location-content">
+                  <h4>Sunday to Friday</h4>
+                  <h6>10am - 7pm</h6>
+                </div>
+              </div>
+            </Col>
+
+            <Col
+              lg="2"
+              md="3"
+              sm="0"
+              className=" d-flex align-items-center justify-content-end "
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              <button className="header__btn btn ">
+                <Link to="/contact">
+                  <i class="ri-phone-line"></i> Request a call
+                </Link>
+              </button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* ========== main navigation =========== */}
+
+      <div className="main__navbar">
+        <Container>
+          <div className="navigation__wrapper d-flex align-items-center justify-content-between">
+            <span className="mobile__menu">
+              <i class="ri-menu-line" onClick={toggleMenu}></i>
+            </span>
+
+            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+              <div className="menu">
+                {navLinks.map((item, index) => (
+                  <NavLink
+                    to={item.path}
+                    className={(navClass) =>
+                      navClass.isActive ? "nav__active nav__item" : "nav__item"
+                    }
+                    key={index}
+                  >
+                    {item.display}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            <div className="nav__right">
+              <div className="search__box">
+                <input type="text" placeholder="Search" />
+                <span>
+                  <i class="ri-search-line"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </header>
   );
-}
-export default ResponsiveAppBar;
+};
+
+export default Header;
