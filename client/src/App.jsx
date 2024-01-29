@@ -3,15 +3,18 @@ import SignInSide from "./components/UserSignin";
 //import Home from "./components/Home";
 //import { useState } from "react/cjs/hooks";
 import Header from "./components/Header";
+import {BrowserRouter} from "react-router-dom"
 
 const App = () => {
     return (
         <Fragment>
-            <Header/>
-        
-            <div>
-                <SignInSide/>
-             </div>
+            <BrowserRouter>
+                <Header/>
+            
+                <div>
+                    <SignInSide/>
+                </div>
+            </BrowserRouter>
          </Fragment>
     );
 }
