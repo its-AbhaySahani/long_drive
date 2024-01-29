@@ -134,7 +134,7 @@ const Header = () => {
                 {navLinks.map((item, index) => (
                   <NavLink
                     to={item.path}
-                    className="nav__active nav__item"
+                    className={"nav__active nav__item"}
                     key={index}
                   >
                     {item.display}
