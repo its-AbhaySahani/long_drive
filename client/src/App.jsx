@@ -1,23 +1,28 @@
 import React, { Fragment } from "react";
-import SignInSide from "./components/UserSignin";
-//import Home from "./components/Home";
-//import { useState } from "react/cjs/hooks";
-import Header from "./components/Header";
-import {BrowserRouter} from "react-router-dom"
-import Footer from "./components/Footer";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import HomePage from "./pages/Home/Home";
+
+
+
+
+
+
 
 const App = () => {
     return (
-        <Fragment>
-            <BrowserRouter>
-                <Header/>
-            
-                <div>
-                    <SignInSide/>
-                </div>
-                <Footer/>
-            </BrowserRouter>
-         </Fragment>
+        <div>
+            <Header/>
+        <Router>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
+
+            <Footer/>
+        </div>
+
     );
 }
 
