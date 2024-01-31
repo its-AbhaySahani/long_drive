@@ -3,55 +3,44 @@ import styled from "styled-components";
 const AboutSection = () => {
   return (
     <AboutSectionContainer>
-      <h2>A car for every occasion</h2>
+      <h2>A vehicle for every occasion</h2>
       <p>
-        We offers city taxies, cars for your every occasin on the best prices.
+        We offer city taxis, cars, and bikes for every occasion at the best prices, available on an hourly basis.
       </p>
       <CardsContainer>
         <Card>
           <img
-            src="https://www.alabamamediagroup.com/wp-content/uploads/2017/04/newcar2-1030x687.jpg"
-            alt=""
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2Fyc3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="Dream Cars"
           />
           <div>
-            <h3>CITY TAXI</h3>
+            <h3>Dream Cars</h3>
             <p>
-              The perfect way to get through your everyday travel needs. City
-              taxis are available 24/7 and you can book and travel in an
-              instant. With rides starting from as low as Rs. 6/km, you can
-              choose from a wide range of options! You can also opt to do your
-              bit for the environment with Ola Share!
+              Cruise out of town with affordable one-way and round-trip fares through our intercity travel service. Select from a fleet of AC cabs driven by top-notch partners, available within 1 hour or book up to 7 days in advance. We've got you covered across India with a presence in 90+ cities and over 500 one-way routes.
             </p>
           </div>
         </Card>
         <Card>
           <img
-            src="https://www.credit.com/wp-content/uploads/2016/10/car-loans-612x281.jpg"
-            alt=""
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6O_TwqXkA8cZvpAQhervaO4BEjOtbXjYmdg&usqp=CAU.jpg"
+            alt="Super Bikes"
           />
           <div>
-            <h3>OUTSTATION</h3>
+            <h3>Super Bikes</h3>
             <p>
-              Ride out of town at affordable one-way and round-trip fares with
-              Ola{"'"}s intercity travel service. Choose from a range of AC cabs
-              driven by top partners, available in 1 hour or book upto 7 days in
-              advance. We have you covered across India with presence in 90+
-              cities with over 500 one way routes.
+              Zoom out of town with our affordable one-way and round-trip fares in our intercity travel service. Choose from a variety of superbikes, all driven by top partners, available within 1 hour or book up to 7 days in advance. Covering 90+ cities with over 500 one-way routes across India.
             </p>
           </div>
         </Card>
         <Card>
           <img
-            src="https://www.magnifymoney.com/mmassets/uploads/2016/07/iStock_84439397_MEDIUM-e1468909231318-1-e1469425068437.jpg"
-            alt=""
+            src="https://img.freepik.com/free-vector/car-rental-concept-illustration_114360-9267.jpg"
+            alt="Rentals"
           />
           <div>
             <h3>RENTALS</h3>
             <p>
-              With Ola Rentals you get a cab at your disposal. So be it a day
-              long business meeting, a shopping trip with your friends or just a
-              day out in a new city, we have you covered. Packages start at 1
-              hour and can be extended upto 12 hours!
+              Experience the freedom with Long Drive! Rent a car or bike whenever and wherever you desire. Whether it's a day-long business meeting, a shopping spree with friends, or just exploring a new city, we've got you covered. Packages start at 1 hour and can be extended up to 12 hours!
             </p>
           </div>
         </Card>
@@ -59,49 +48,88 @@ const AboutSection = () => {
     </AboutSectionContainer>
   );
 };
+
 const AboutSectionContainer = styled.section`
   text-align: initial;
   margin-top: 50px;
+  background: linear-gradient(to right, #333, #555);
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+
   > h2 {
-    background-color: antiquewhite;
-    width: 100%;
     font-family: "Roboto Mono", monospace;
   }
+
   > p {
     font-size: 1.2rem;
   }
-  @media (min-width: 200px) and (max-width: 600px) {
+
+  @media (max-width: 600px) {
     > h2 {
       margin-top: 20px;
     }
   }
 `;
+
 const CardsContainer = styled.div`
   display: flex;
-  height: 34rem;
-  @media (min-width: 200px) and (max-width: 600px) {
-    flex-direction: column;
-    height: auto;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
 `;
+
 const Card = styled.div`
   padding: 20px;
   background-color: #eff0f1;
-  margin: 10px;
-  width: 33%;
+  width: calc(33.333% - 20px);
   border: 2px solid #cacdd0;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   > img {
     width: 100%;
-    height: 50%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 10px;
   }
-  @media (min-width: 200px) and (max-width: 600px) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 0;
-    margin-right: 0;
+
+  > div {
+    h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #6b0050, #69006b);
+    opacity: 0.8;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(50% - 20px);
+  }
+
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;
+
 export default AboutSection;

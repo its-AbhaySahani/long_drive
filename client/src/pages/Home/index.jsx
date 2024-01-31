@@ -1,19 +1,18 @@
 import "./home.css";
 import AboutSection from "../../components/aboutsection";
-import WhySection from "../../components/whysection/Why";
-import Slide from "../../components/slide/Slide";
+import WhySection from "../../components/whysection";
+import Slide from "../../components/slide";
 import styled from "styled-components";
-
 
 const HomePage = () => {
   return (
     <Container>
       <HomeIntro>
-        <h2>Make Your Ride Sensual</h2>
+        <h2>Get Any Car on Rent</h2>
       </HomeIntro>
       <HomeSection>
         <div>
-          <h1> Book a Vehicle to your destination in town</h1>
+          <h1> Book a City Taxi to your destination in town</h1>
           <p> Choose from a range of categories and prices</p>
         </div>
       </HomeSection>

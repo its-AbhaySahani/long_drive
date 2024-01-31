@@ -2,8 +2,7 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <FooterContainer>
-      <div>Copyright © 2024 Long Drive by Abhay Sahani</div>
-
+      <div>Copyright © Developed by Abhay Sahani</div>
     </FooterContainer>
   );
 };
