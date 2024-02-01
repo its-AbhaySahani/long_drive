@@ -1,7 +1,7 @@
 import "./home.css";
-import AboutSection from "../../components/aboutsection";
+import AboutSection from "../../components/aboutsection/About";
 import WhySection from "../../components/whysection";
-import Slide from "../../components/slide";
+import Slide from "../../components/slide/Slide";
 import styled from "styled-components";
 
 const HomePage = () => {
