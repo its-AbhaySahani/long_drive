@@ -1,49 +1,41 @@
-import './style.css'
+import './style.css';
+
 const Slide = () => {
   return (
-    <div
-      id="introslide"
-      className="carousel slide"
-      data-bs-ride="carousel"
-      data-bs-interval={2000}
-    >
+    <div id="introslide" className="carousel slide" data-bs-ride="carousel" data-bs-interval={2000}>
       <div className="carousel-inner">
         <div className="carousel-item active">
           <div className="slide-items">
-            <img src="https://www.olacabs.com/webstatic/img/fleet-image/micro.png" alt=""/>
+            <img src="https://www.olacabs.com/webstatic/img/fleet-image/micro.png" alt="Micro Bike" />
             <div>
-              <h1 className="d-block w-100">Micro</h1>
-              <h3>Small fairs for small rides</h3>
+              <h1 className="d-block w-100">Hourly Micro Rentals</h1>
+              <h3>Perfect for Short Rides</h3>
               <p>
-                Compact yet comfortable AC cars that seat up to 3 people and
-                give you great value for your money. Small fares for short
-                rides.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item ">
-          <div className="slide-items">
-            <img src="https://www.olacabs.com/webstatic/img/fleet-image/share.png" alt=""/>
-            <div>
-              <h1>Share</h1>
-              <h3>Eco Friendly rides at pocket-friendly rates</h3>
-              <p>
-                Fully air conditioned cars that you can share with others
-                depending on your route and location.
+                Explore the city with our compact yet comfortable bikes and cars designed for short rides. Ideal for quick trips and small errands.
               </p>
             </div>
           </div>
         </div>
         <div className="carousel-item">
           <div className="slide-items">
-            <img src="https://www.olacabs.com/webstatic/img/fleet-image/prime-sedan.png" alt=""/>
+            <img src="https://www.olacabs.com/webstatic/img/fleet-image/share.png" alt="Share Bike" />
             <div>
-              <h1>Prime Sedan</h1>
-              <h3>Sedans with free wifi and Top Drivers</h3>
+              <h1>Hourly Share Rides</h1>
+              <h3>Environmentally Friendly and Budget-Friendly</h3>
               <p>
-                Top rated drivers, and a hand-picked fleet of the best cars with
-                extra legroom and boot space.
+                Enjoy fully air-conditioned bikes and cars that you can share with others based on your route and location. Budget-friendly and eco-conscious travel.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="carousel-item">
+          <div className="slide-items">
+            <img src="https://www.olacabs.com/webstatic/img/fleet-image/prime-sedan.png" alt="Prime Sedan" />
+            <div>
+              <h1>Hourly Prime Sedan Rentals</h1>
+              <h3>Luxurious Sedans with Free WiFi</h3>
+              <p>
+                Experience top-notch comfort with our prime sedan rentals. Our hand-picked fleet offers extra legroom, spacious boot, and complimentary WiFi, driven by top-rated drivers.
               </p>
             </div>
           </div>
@@ -52,4 +44,5 @@ const Slide = () => {
     </div>
   );
 };
+
 export default Slide;

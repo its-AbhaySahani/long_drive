@@ -4,53 +4,49 @@ import styled from "styled-components";
 const WhySection = () => {
   return (
     <Section>
-      <h1>Why Book Any Car?</h1>
-      <p>The best way to travel to your destination</p>
+      <h1>Why Choose Any Ride?</h1>
+      <p>Discover the advantages of our bike and car rental system</p>
       <div className="why-section-container">
         <Container>
           <WhyCard
-            heading="Cabs for Every Pocket"
-            description="From Sedans and SUVs to Luxury cars for special occasions, we
-                have cabs to suit every pocket"
-            imgUrl="https://cms-web.olacabs.com/00000000368.jpg"
+            heading="Bikes and Cars for Every Need"
+            description="Whether you need a bike for a quick city ride or a car for a weekend getaway, we offer a diverse range of vehicles to suit your every need."
+            imgUrl="https://example.com/image1.jpg"
           />
           <WhyCard
-            heading="Secure and Safer Rides"
-            description="Verified drivers, an emergency alert button, and live ride
-                tracking are some of the features that we have in place to
-                ensure you a safe travel experience."
-            imgUrl="https://cms-web.olacabs.com/00000000370.jpg"
+            heading="Secure and Reliable Rentals"
+            description="Our rental system prioritizes your safety with verified vehicle conditions, emergency support, and real-time ride tracking, ensuring a secure and reliable travel experience."
+            imgUrl="https://example.com/image2.jpg"
           />
         </Container>
         <Container>
           <WhyCard
-            heading="Share and Express"
-            description="To travel with the lowest fares choose Ola Share. For a faster
-                travel experience we have Share Express on some fixed routes
-                with zero deviations. Choose your ride and zoom away!"
-            imgUrl="https://cms-web.olacabs.com/00000000382.jpg"
+            heading="Flexible Sharing Options"
+            description="Choose from flexible sharing options like bike-sharing and car-sharing to enjoy affordable travel. Explore fixed routes with zero deviations through our Express service."
+            imgUrl="https://example.com/image3.jpg"
           />
           <WhyCard
-            heading="In Cab Entertainment"
-            description="Play music, watch videos and a lot more with Ola Play! Also stay
-                connected even if you are travelling through poor network areas
-                with our free wifi facility."
-            imgUrl="https://cms-web.olacabs.com/00000000371.jpg"
+            heading="Entertainment on the Go"
+            description="Enjoy in-cab entertainment with features like music, videos, and more through Any Ride Play. Stay connected even in areas with poor network coverage with our free WiFi facility."
+            imgUrl="https://example.com/image4.jpg"
           />
         </Container>
       </div>
     </Section>
   );
 };
+
 const Section = styled.section`
   text-align: left;
   margin-top: 20px;
   padding: 10px;
 `;
+
 const Container = styled.div`
   display: flex;
   @media (min-width: 200px) and (max-width: 600px) {
     flex-direction: column;
   }
 `;
+
 export default WhySection;
