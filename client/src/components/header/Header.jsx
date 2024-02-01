@@ -2,13 +2,15 @@
 
 import React from "react";
 import styled from "styled-components";
+import LD from  "../../images/logo.png";
+
 
 
 const Header = () => {
   return (
     <HeaderContainer>
       <Logo>
-        <img src="../images/logo.png" />
+        <img src= {LD} />
       </Logo>
       <NavItemContainer>
         <NavItem href="/">Home</NavItem>
