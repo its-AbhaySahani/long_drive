@@ -2,13 +2,15 @@
 
 import React from "react";
 import styled from "styled-components";
+import LD from  "../../images/logo.png";
+
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <img src="./images/logo.png" alt="logo" />
+          <img src= {LD}  />
         </LogoContainer>
         <ContactInfo>
           <h3>Contact Us</h3>
@@ -55,7 +57,7 @@ const FooterContent = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  width: 100px; /* Adjust as needed */
+  width: 250px; /* Adjust as needed */
   img {
     max-width: 100%;
   }

@@ -4,6 +4,7 @@ import WhySection from "../../components/whysection";
 import Slide from "../../components/slide/Slide";
 import styled from "styled-components";
 
+
 const HomePage = () => {
   return (
     <Container>

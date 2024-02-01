@@ -37,8 +37,8 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.div`
   img {
-    max-width: 100px;
-    height: auto;
+    max-width: 160px;
+    height: 50px;
   }
 `;
 
