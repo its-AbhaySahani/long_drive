@@ -12,7 +12,7 @@ const HomePage = () => {
       </HomeIntro>
       <HomeSection>
         <div>
-          <h1> Book a City Taxi to your destination in town</h1>
+          <h1> Book a Car/Bike to your destination in town</h1>
           <p> Choose from a range of categories and prices</p>
         </div>
       </HomeSection>

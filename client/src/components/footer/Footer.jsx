@@ -42,8 +42,8 @@ const Footer = () => {
 };
 
 const FooterContainer = styled.footer`
-  background-color: #1abc9c;
-  color: #fff;
+  background-color: #1e272e; /* Dark color */
+  color: #bdc3c7; /* Light text color */
   padding: 20px 0;
 `;
 
@@ -73,7 +73,7 @@ const ContactInfo = styled.div`
 
   p {
     margin: 5px 0;
-    color: #e0e0e0;
+    color: #bdc3c7;
   }
 `;
 
@@ -121,7 +121,7 @@ const SocialIcon = styled.a`
 const CopyrightText = styled.div`
   text-align: center;
   margin-top: 20px;
-  color: #e0e0e0;
+  color: #bdc3c7;
 `;
 
 export default Footer;

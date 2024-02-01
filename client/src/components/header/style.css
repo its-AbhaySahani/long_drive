@@ -1,0 +1,18 @@
+/* style.css */
+
+/* Add any global styles here */
+
+/* For Header */
+header {
+    font-size: 16px;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
