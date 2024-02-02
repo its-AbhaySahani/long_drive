@@ -15,7 +15,6 @@ const HomePage = () => {
       <HomeIntro>
         <h2>Get Any Car on Rent</h2>
       </HomeIntro>
-      <CardDisplay headline="headline" cards={arr}/>
       <HomeSection>
         <div>
           <h1> Book a Car/Bike to your destination in town</h1>
@@ -23,6 +22,7 @@ const HomePage = () => {
         </div>
       </HomeSection>
       <AboutSection />
+      <CardDisplay headline="headline" cards={arr}/>
       <WhySection />
      
       <Slide />

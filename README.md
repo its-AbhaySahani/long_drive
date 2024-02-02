@@ -1,14 +1,24 @@
 ### long_drive
 
 
-### Project Name :-  Long Drive
+### Project Name :-  Long Drive : peer-to-peer vehicle rental  platform
+
+### Important Links:
+1. **Netlify Link** : https://long-drive.netlify.app/
+2. **Figma Link** : https://www.figma.com/file/vLmZi6o35G3naNwTovaxiB/LongDrive?type=design&node-id=0%3A1&mode=design&t=TiCNMu5MSFDYYs1r-1
+3. **PostMan Documentation:** https://documenter.getpostman.com/view/32360617/2s9YsT6UPA
+
+### Class Test : Deploying server on Render
+Github Repo link : https://github.com/its-AbhaySahani/MERN-Basics
+Render Live link: https://mern-basics.onrender.com/students
+
 
 ### Introduction :
-Welcome to the Long Drive! A peer-to-peer buy, sale, and rent car platform. This web application allows users to buy new cars from dealers, sell their old cars to potential buyers, and even rent vehicles for short-term use. The platform facilitates the entire process from browsing and transactions to listing and renting.
+Welcome to Long Drive! Long Drive is a peer-to-peer Vehicle rental platform designed to provide users with a convenient solution for renting vehicles. This web application allows users to explore a variety of cars available for short-term rental, facilitating the entire process from browsing and transactions to booking and renting.
 
 
 ### Problem Statement :
-In today's dynamic automotive landscape, individuals not only seek to buy and sell cars but also explore the convenience of renting vehicles for various purposes. Long Drive aims to provide a comprehensive solution, offering users a seamless experience for buying, selling, and renting cars.
+In today's dynamic automotive landscape, individuals seek the convenience of renting vehicles for various purposes. Long Drive aims to provide a comprehensive solution, offering users a seamless experience for renting cars/Bikes.
 
 
 
@@ -27,12 +37,8 @@ Car rental service in India
 
 Long Drive platform proposes an inclusive solution that encompasses:
 
-- Buying and Selling Cars: Seamless transactions for purchasing new vehicles or selling existing ones.
-- Renting Cars: A dedicated feature allowing users to rent cars for short-term needs.
-- User Authentication: Robust authentication mechanisms to ensure the integrity of user accounts.
-- Efficient Listings: An easy-to-use interface for listing cars with detailed specifications, images, and pricing.
-- Powerful Search and Filters: Advanced search and filtering options for users to find the perfect car or rental.
-
+- Long Drive proposes an inclusive solution that focuses solely on car/bike rentals, providing users with features like browsing rental cars, bikes,  filtering and searching based on various parameters, viewing detailed car information, and managing rental history.
+- User also give with the feature of earning Money by giving thier car on rent which make the app more unique.
 
 ## Key Features :
 
@@ -41,13 +47,11 @@ Long Drive platform proposes an inclusive solution that encompasses:
 - **Browse Rental Cars:** Users can explore a variety of cars available for short-term rental.
 - **Filter and Search:** Filter rental cars based on make, model, availability, and other parameters.
 - **Car Details:** View detailed information about each rental car, including images, specifications, and pricing.
-- **Rent a Car:** Users can select a rental period, provide payment details, and confirm their car rental.
+- **Rent a Car/Bike:** Users can select a rental period, provide payment details, and confirm their car rental.
 - **Rental History:** Users can view their past and current car rental history.
 
-### Buying and Selling Cars (Existing Features)
-
-- **Browse and Buy Cars:** Users can browse and purchase new cars from dealers.
-- **Sell Cars:** Sellers can list their old cars for sale with details such as make, model, year, images, and pricing.
+### Renting User's Car Feature ( Earn Money): 
+- **Add Car:** User can add their vehicle on rent ing platform by providing necessary details like VIN number, Make, Model etc.
 
 
 
@@ -116,6 +120,3 @@ Database used is MongoDB atlas, it's a cloud based NoSQL database provided by mo
 
 
 
-### Class Test : Deploying server on Render
-Github Repo link : https://github.com/its-AbhaySahani/MERN-Basics
-Render Live link: https://mern-basics.onrender.com/students
