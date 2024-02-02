@@ -1,4 +1,5 @@
 import "./App.css";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import HomePage from "./pages/Home/Home.jsx";
 import AddCarPage from "./pages/addcar";
 import CarsPage from "./pages/cars";
@@ -9,9 +10,17 @@ import Slide from "./components/slide/Slide";
 import AboutSection from "./components/aboutsection/About";
 import WhySection from "./components/whysection/Why.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 import { Fragment } from "react";
 function App() {
   return (
+    <ThemeProvider theme={darkTheme}>
     <Fragment>
       <Header />
 
@@ -30,6 +39,7 @@ function App() {
       </div>
       <Footer />
     </Fragment>
+    </ThemeProvider>
   );
 }
 

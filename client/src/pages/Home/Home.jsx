@@ -52,7 +52,7 @@ const HomeSection = styled.section`
   color: white;
   ::before {
     content: "";
-    background: url("https://www.nerdwallet.com/assets/blog/wp-content/uploads/2018/01/why-kei-51455-1440x864.jpg")
+    background: url("https://4kwallpapers.com/images/walls/thumbs_3t/5740.jpg")
       repeat center center/cover;
     position: absolute;
     height: 100%;
