@@ -14,20 +14,20 @@ const Header = () => {
       </Logo>
       <NavItemContainer>
         <NavItem href="/">Home</NavItem>
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/cars">Cars</NavItem>
+        <NavItem href="/LongDrive/#/AboutPage">About</NavItem>
+        <NavItem href="/LongDrive/#/cars">Cars</NavItem>
         <NavItem href="/bikes">Bikes</NavItem>
         <NavItem href="/contact">Contact</NavItem>
       </NavItemContainer>
       <UserSection>
-        <EarnButton href="/Owner">Earn with Us</EarnButton>
+        <EarnButton href="/LongDrive/#/addcar">Earn with Us</EarnButton>
       </UserSection>
     </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.header`
-  background-color: #2c3e50;
+  background-color: #d98fd9;
   color: #ecf0f1;
   padding: 15px;
   display: flex;

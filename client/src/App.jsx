@@ -1,5 +1,5 @@
 import "./App.css";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/Home/Home";
 import AddCarPage from "./pages/addcar";
 import CarsPage from "./pages/cars";
 import AboutPage from "./pages/about";
