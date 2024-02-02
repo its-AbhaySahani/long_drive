@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import LD from  "../../images/logo.png";
+import LD from  "../../assets/logo.png";
 
 
 
