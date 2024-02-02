@@ -49,4 +49,4 @@ const Container = styled.div`
   }
 `;
 
-export default Why;
+export default WhySection;

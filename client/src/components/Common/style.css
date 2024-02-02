@@ -1,0 +1,10 @@
+.garage{
+    margin: 10px;   
+}
+
+.car-card{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+}

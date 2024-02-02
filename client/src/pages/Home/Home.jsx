@@ -1,16 +1,21 @@
 import "./home.css";
 import AboutSection from "../../components/aboutsection/About";
-import WhySection from "../../components/whysection/Why.jsx";
+import WhySection from "../../components/whysection/Why";
 import Slide from "../../components/slide/Slide";
 import styled from "styled-components";
+//import CarCard from "../../components/common/CommonCard"
+import CardDisplay from "../../components/common/CardDisplay";
+
 
 
 const HomePage = () => {
+  const arr = new Array(5).fill(5)
   return (
     <Container>
       <HomeIntro>
         <h2>Get Any Car on Rent</h2>
       </HomeIntro>
+      <CardDisplay headline="headline" cards={arr}/>
       <HomeSection>
         <div>
           <h1> Book a Car/Bike to your destination in town</h1>
@@ -19,12 +24,14 @@ const HomePage = () => {
       </HomeSection>
       <AboutSection />
       <WhySection />
+     
       <Slide />
+      
     </Container>
   );
 };
 const Container = styled.div`
-  text-align: center;
+;
 `;
 const HomeIntro = styled.div`
   margin: 20px;

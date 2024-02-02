@@ -5,7 +5,7 @@ const Cars = () => {
         <h2>Select the car you want</h2>
       </div>
       <div class="car-list-container"></div>
-    </div>
+    </div> 
   );
 };
 export default Cars;
