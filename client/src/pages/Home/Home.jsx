@@ -1,15 +1,25 @@
+import {useState} from "react"
 import "./home.css";
 import AboutSection from "../../components/aboutsection/About";
 import WhySection from "../../components/whysection/Why";
 import Slide from "../../components/slide/Slide";
 import styled from "styled-components";
 //import CarCard from "../../components/common/CommonCard"
-import CardDisplay from "../../components/common/CardDisplay";
+import CardDisplay from "../../components/common/CardDisplay.jsx";
 
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import dayjs from 'dayjs';
 
 
 const HomePage = () => {
   const arr = new Array(5).fill(5)
+  const [value, setValue] = useState([
+    dayjs('2022-04-17'),
+    dayjs('2022-04-21'),
+  ]);
   return (
     <Container>
       <HomeSection>
@@ -17,6 +27,15 @@ const HomePage = () => {
           <div className="head-text"> Drive To Your Destination </div>
           <div className="head-subtext"> Choose Your Route </div>
         </div>
+        <DateTimePicker
+          label="With Time Clock"
+          viewRenderers={{
+            hours: renderTimeViewClock,
+            minutes: renderTimeViewClock,
+            seconds: renderTimeViewClock,
+          }}
+        />
+
       </HomeSection>
       <AboutSection />
       <CardDisplay headline="headline" cards={arr}/>
@@ -33,7 +52,7 @@ const Container = styled.div`
 const HomeIntro = styled.div`
   margin: 20px;
   color: #505056;
-  background-color: #fef1f440;
+  background-color: #121212;
   border-radius: 38px;
   > h2 {
     font-size: 2.6rem;
