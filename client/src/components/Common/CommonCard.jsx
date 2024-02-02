@@ -8,7 +8,7 @@ import CarPic1 from "../../assets/car.png"
 
 export default function ActionAreaCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 300, minWidth:300, aspectRatio:1, borderRadius:5 }}>
       <CardActionArea>
         <CardMedia
           component="img"

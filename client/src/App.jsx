@@ -24,7 +24,7 @@ function App() {
       <Fragment>
         <Header />
 
-        <div className="app-container" Style={{ margin: "10px" }}>
+        <div className="app-container" style={{ margin: "10px" }}>
           <Router>
             <Routes>
               <Route exact path="/" element={<HomePage />} />

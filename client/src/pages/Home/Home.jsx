@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react";
 import "./home.css";
 import AboutSection from "../../components/aboutsection/About";
 import WhySection from "../../components/whysection/Why";
@@ -7,42 +7,45 @@ import styled from "styled-components";
 //import CarCard from "../../components/common/CommonCard"
 import CardDisplay from "../../components/common/CardDisplay.jsx";
 
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import dayjs from 'dayjs';
-
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { renderTimeViewClock } from "@mui/x-date-pickers/timeViewRenderers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from "dayjs";
 
 const HomePage = () => {
-  const arr = new Array(5).fill(5)
-  const [value, setValue] = useState([
-    dayjs('2022-04-17'),
-    dayjs('2022-04-21'),
+  const arr = new Array(5).fill(5);
+  const [value, setValue] = useState([ 
+    dayjs("2022-04-17"),
+    dayjs("2022-04-21"),
   ]);
   return (
     <Container>
-      <HomeSection>
+      <HomeSection className="hero">
         <div>
           <div className="head-text"> Drive To Your Destination </div>
           <div className="head-subtext"> Choose Your Route </div>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                label="Start Time"
+                viewRenderers={{
+                  hours: renderTimeViewClock,
+                  minutes: renderTimeViewClock,
+                  seconds: renderTimeViewClock,
+                }}
+                sx={{
+                  background:"#121212"
+                }}
+              />
+          </LocalizationProvider>
         </div>
-        <DateTimePicker
-          label="With Time Clock"
-          viewRenderers={{
-            hours: renderTimeViewClock,
-            minutes: renderTimeViewClock,
-            seconds: renderTimeViewClock,
-          }}
-        />
-
       </HomeSection>
       <AboutSection />
-      <CardDisplay headline="headline" cards={arr}/>
+      <CardDisplay headline="headline" cards={arr} />
       <WhySection />
-     
+
       <Slide />
-      
     </Container>
   );
 };
@@ -68,7 +71,6 @@ const HomeSection = styled.section`
   color: white;
   ::before {
     content: "";
-    background-image: linear-gradient(to bottom, #121212, #12121255), url("https://w.wallha.com/ws/14/yWY4J2td.jpg");
     position: absolute;
     height: 80%;
     width: 100%;

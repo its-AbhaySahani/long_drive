@@ -19,3 +19,7 @@
   font-weight: 900;
   font-size: 40px;
 }
+
+.hero::before{
+  background-image: linear-gradient(to bottom, #121212, #12121255), url("https://w.wallha.com/ws/14/yWY4J2td.jpg");
+}
