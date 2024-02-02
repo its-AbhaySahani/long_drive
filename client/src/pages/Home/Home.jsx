@@ -14,8 +14,8 @@ const HomePage = () => {
     <Container>
       <HomeSection>
         <div>
-          <h1> Book a Car/Bike to your destination in town</h1>
-          <p> Choose from a range of categories and prices</p>
+          <div className="head-text"> Drive To Your Destination </div>
+          <div className="head-subtext"> Choose your route </div>
         </div>
       </HomeSection>
       <AboutSection />
@@ -49,8 +49,7 @@ const HomeSection = styled.section`
   color: white;
   ::before {
     content: "";
-    background: url("https://w.wallha.com/ws/14/yWY4J2td.jpg")
-      repeat center center/cover;
+    background-image: linear-gradient(to bottom, #121212, #12121255), url("https://w.wallha.com/ws/14/yWY4J2td.jpg");
     position: absolute;
     height: 80%;
     width: 100%;
@@ -58,7 +57,6 @@ const HomeSection = styled.section`
     opacity: 0.95;
     top: 0px;
     left: 0px;
-    background-color: 
   }
   > div {
     margin-top: 100px;
