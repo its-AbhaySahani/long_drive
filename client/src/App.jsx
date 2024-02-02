@@ -2,7 +2,6 @@ import "./App.css";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import HomePage from "./pages/Home/Home.jsx";
 import AddCarPage from "./pages/addcar";
-import CarsPage from "./pages/cars";
 import AboutPage from "./pages/about";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -30,7 +29,7 @@ function App() {
             <Route exact path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/addcar" element={<AddCarPage />} />
-            <Route path="/cars" element={<CarsPage />} />
+     
           </Routes>
         </Router>
         <AboutSection />

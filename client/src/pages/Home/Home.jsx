@@ -12,9 +12,6 @@ const HomePage = () => {
   const arr = new Array(5).fill(5)
   return (
     <Container>
-      <HomeIntro>
-        <h2>Get Any Car on Rent</h2>
-      </HomeIntro>
       <HomeSection>
         <div>
           <h1> Book a Car/Bike to your destination in town</h1>
@@ -52,17 +49,16 @@ const HomeSection = styled.section`
   color: white;
   ::before {
     content: "";
-    background: url("https://4kwallpapers.com/images/walls/thumbs_3t/5740.jpg")
+    background: url("https://w.wallha.com/ws/14/yWY4J2td.jpg")
       repeat center center/cover;
     position: absolute;
-    height: 100%;
+    height: 80%;
     width: 100%;
     z-index: -1;
     opacity: 0.95;
     top: 0px;
     left: 0px;
-    filter: blur(3px);
-    -webkit-filter: blur(4px);
+    background-color: 
   }
   > div {
     margin-top: 100px;
