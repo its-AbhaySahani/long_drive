@@ -47,6 +47,7 @@ const FooterContainer = styled.footer`
   background-color: #482c50; /* Dark color */
   color: #bdc3c7; /* Light text color */
   padding: 20px 0;
+  width: 100%;
 `;
 
 const FooterContent = styled.div`

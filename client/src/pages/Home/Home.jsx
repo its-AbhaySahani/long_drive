@@ -15,7 +15,7 @@ const HomePage = () => {
       <HomeSection>
         <div>
           <div className="head-text"> Drive To Your Destination </div>
-          <div className="head-subtext"> Choose your route </div>
+          <div className="head-subtext"> Choose Your Route </div>
         </div>
       </HomeSection>
       <AboutSection />
