@@ -1,4 +1,4 @@
-import AuthPage from "./authpage";
+import AuthPage from "./Authpage";
 const authComponent = () => {
   
 

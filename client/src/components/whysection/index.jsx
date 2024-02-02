@@ -1,4 +1,4 @@
-import WhyCard from "./whycard";
+import WhyCard from "./Whycard";
 import styled from "styled-components";
 
 const WhySection = () => {

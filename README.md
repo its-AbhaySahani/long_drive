@@ -19,8 +19,7 @@ Car rental service in India
 
 - Revv    https://www.revv.co.in/
 
-- Cars24    https://www.cars24.com/
-give only buy and sale features
+
 
 
 ### Proposed Solution :
