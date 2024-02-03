@@ -49,6 +49,7 @@ const AboutPage = () => {
 						inspections to ensure they meet the highest safety standards. Rest assured, you'll be hitting
 						the road in a reliable and well-maintained vehicle.
 					</div>
+					
 				</div>
 			</div>
 		</div>
