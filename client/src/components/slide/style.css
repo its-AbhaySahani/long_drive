@@ -8,7 +8,17 @@
 }
 .slide-items {
   display: flex;
+  margin: 20px 10px;
+  border-radius: 15px;;
+  background-color: #ffffff14;
+  transition: 300ms;
 }
+
+.slide-items:hover{
+
+  box-shadow: 0 0 10px 1px #ff7878;
+}
+
 .slide-items > div {
   display: flex;
   flex-direction: column;

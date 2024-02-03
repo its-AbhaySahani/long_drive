@@ -1,8 +1,39 @@
-.app-container{
-  margin: 0 15px;
+*{
+  transition: 200ms;;
 }
 
+#root{
+  width: 100vw;
+}
+.app-container{
+  margin: auto;
+  max-width: 1800px;
+  padding: 20px;
+}
+
+.heading{
+  color: #ff5672;
+  font: 60px, Impact, sans-serif;
+  font-weight: 900;
+}
 
 body{
   background-color: #212121;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.content{
+    color: #fff;
+    font-size: 20px;
+    margin: 20px 10px;
+}
+
+.sub-head{
+  color: pink;
+  font-size: 20px;;
 }

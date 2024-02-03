@@ -4,8 +4,8 @@ import styled from "styled-components";
 const WhySection = () => {
   return (
     <Section>
-      <h1>Why Choose Any Ride?</h1>
-      <p>Discover the advantages of our bike and car rental system</p>
+      <h1 className="heading">Why Choose Any Ride?</h1>
+      <p className="content">Discover the advantages of our bike and car rental system</p>
       <div className="why-section-container">
         <Container>
           <WhyCard
