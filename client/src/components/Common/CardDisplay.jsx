@@ -1,4 +1,4 @@
-import ActionAreaCard from './CommonCard';
+import ActionAreaCard from './CommonCard.jsx';
 import './style.css';
 function CardDisplay({headline, cards}) {
     return (
