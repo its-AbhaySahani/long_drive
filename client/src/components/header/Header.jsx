@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = [['Home', '/'], ['About', '/LongDrive/#/about'], ['Cars', '/LongDrive/#/cars'], ['Bike', '/LongDrive/#/bikes']];
-const settings = ['Profile', 'Add Car', 'Dashboard', 'Logout'];
+const settings = [ ['Add Car','/LongDrive/#/addcar'] ];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -88,14 +88,15 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page[0]} onClick={handleCloseNavMenu}>
                   <a href={page[1]}>
-                  <Typography textAlign="center">{page[0]}</Typography>
+                    <Typography textAlign="center">{page[0]}</Typography>
                   </a>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -118,7 +119,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page[0]}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -152,8 +153,10 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting[0]} onClick={handleCloseUserMenu}>
+                  <a href={setting[1]}>
+                    <Typography textAlign="center">{setting[0]}</Typography>
+                  </a>
                 </MenuItem>
               ))}
             </Menu>
@@ -163,4 +166,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;

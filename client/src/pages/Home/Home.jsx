@@ -77,7 +77,15 @@ const HomePage = () => {
 				</div>
 			</HomeSection>
 			<AboutSection />
-			<CardDisplay headline="Available Cars" cards={arr} />
+			<CardDisplay headline="Explore SuperCars" cards={arr} />
+			<CardDisplay headline="Explore SuperBikes" cards={arr} />
+			<CardDisplay headline="Budget Vehicles" cards={arr} />
+			<CardDisplay headline="Family Trip" cards={arr} />
+			<CardDisplay headline="Special Ones" cards={arr} />
+
+
+
+
 			<WhySection />
 
 			<Slide />

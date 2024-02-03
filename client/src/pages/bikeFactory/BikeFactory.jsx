@@ -1,44 +1,25 @@
-// BikeFactory.js
-
 import React from "react";
-import { Grid, makeStyles } from "@mui/material";
-import ActionAreaCard from "../../components/common/CommonCard";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(2),
-  },
-}));
+import { Grid, Typography } from "@mui/material";
+import ActionAreaCard from "../../components/common/CommonCard.jsx";
 
 const BikeFactory = () => {
-  const classes = useStyles();
-
-  // Dummy bike data for demonstration
   const bikes = [
-    {
-      id: 1,
-      title: "Mountain Bike",
-      description: "An excellent bike for off-road adventures.",
-      image: "/images/mountain_bike.jpg",
-    },
-    {
-      id: 2,
-      title: "City Bike",
-      description: "Perfect for commuting in the city with style.",
-      image: "/images/city_bike.jpg",
-    },
+    { id: 1, name: "bike1", image: "bike1.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+    { id: 2, name: "bike2", image: "car2.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   ];
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        {bikes.map((bike) => (
-          <Grid item xs={12} sm={6} md={4} key={bike.id}>
+    <div>
+      <Typography variant="h2" gutterBottom>
+        Available Bikes
+      </Typography>
+      <Grid container spacing={2}>
+        {bikes.map((car) => (
+          <Grid key={car.id} item xs={12} sm={6} md={4} lg={3}>
             <ActionAreaCard
-              title={bike.title}
-              description={bike.description}
-              image={bike.image}
+              title={car.name}
+              image={car.image}
+              description={car.description}
             />
           </Grid>
         ))}
