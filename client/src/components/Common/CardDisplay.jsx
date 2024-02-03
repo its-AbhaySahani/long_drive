@@ -3,7 +3,7 @@ import './style.css';
 function CardDisplay({headline, cards}) {
     return (
         <div className="garage">
-            <h2>{headline}</h2>
+            <h1 className="heading">{headline}</h1>
             <div className="car-cards">
                 { cards.map((c, index)=><ActionAreaCard key={index}/>) }
             </div>

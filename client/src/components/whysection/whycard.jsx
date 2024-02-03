@@ -4,7 +4,7 @@ const WhyCard = ({ heading, description, imgUrl }) => {
     <Card>
       <img src={imgUrl} alt="" />
       <div className="why-card-info">
-        <h3>{heading}</h3>
+        <h1>{heading}</h1>
         <p>{description}</p>
       </div>
     </Card>
