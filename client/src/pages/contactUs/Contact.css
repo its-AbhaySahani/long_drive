@@ -1,0 +1,24 @@
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate_from_bottom {
+    animation: slideInFromBottom 1.5s ease-out;
+    /* Adjust duration and timing function as needed */
+}
+
+.animate_from_bottom {
+    transition: transform 10s ease;
+}
+.animate_from_bottom:hover {
+    transform: scale(1.1);
+    /* Adjust the scale factor as needed */
+}
