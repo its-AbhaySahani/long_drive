@@ -3,7 +3,7 @@ import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import './home.css';
 import AboutSection from '../../components/aboutsection/About';
-import WhySection from '../../components/whysection/Why';
+import WhySection from '../../components/whysection/index.jsx';
 import Slide from '../../components/slide/Slide';
 import styled from 'styled-components';
 //import CarCard from "../../components/common/CommonCard"

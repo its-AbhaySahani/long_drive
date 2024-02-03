@@ -7,7 +7,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Slide from "./components/slide/Slide";
 import AboutSection from "./components/aboutsection/About";
-import WhySection from "./components/whysection/Why.jsx";
+import WhySection from "./components/whysection/index.jsx";
 import CarFactory from "./pages/carFactory/CarFactory.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
