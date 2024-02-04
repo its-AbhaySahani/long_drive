@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = [['Home', '/'], ['About', '/LongDrive/#/about'], ['Cars', '/LongDrive/#/cars'], ['Bike', '/LongDrive/#/bikes']];
+const pages = [['Home', '/'], ['About', '/LongDrive/#/about'], ['Cars', '/LongDrive/#/cars'], ['Bike', '/LongDrive/#/bikes'], ['Contact', '/LongDrive/#/Contact']];
 const settings = [ ['Add Car','/LongDrive/#/addcar'] ];
 
 function ResponsiveAppBar() {

@@ -11,6 +11,7 @@ import WhySection from "./components/whysection/index.jsx";
 import CarFactory from "./pages/carFactory/CarFactory.jsx";
 import BikeFactory from "./pages/bikeFactory/BikeFactory.jsx";
 import addCarForm from "./pages/addcar/addcarform.jsx";
+import Contact from  "./pages/contactUs/Contact.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 const darkTheme = createTheme({
@@ -35,6 +36,7 @@ function App() {
               <Route path="/cars" element={<CarFactory />} />
               <Route path="/addform" element={<addCarForm />} />
               <Route path="/bikes" element={<BikeFactory />} />
+              <Route path="/contact" element={<Contact />} />
 
             </Routes>
           </Router>

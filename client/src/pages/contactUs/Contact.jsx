@@ -1,28 +1,28 @@
 import React from 'react';
-import Navbar from './Navbar';
-import maintop from "./maintop.png";
+
+import maintop from "../../assets/banner.png";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link } from '@mui/material';
-import insta from "./insta.webp"
-import linkedin from "./linkedin.jpg"
-import github from "./github.jpg"
-import gmail from "./gmail.webp"
+import insta from "../../assets/insta.png"
+import linkedin from "../../assets/linkedin.webp"
+import github from "../../assets/github.png"
+import gmail from "../../assets/gmail.webp"
 import './Contact.css'
-import Footer from './Footer'
+
 
 function Contact() {
   return (
     <>
       <div >
-        <img src={maintop} alt="Description of Image" style={{ width: '100%', height: '310px' }} />
+        <img src={maintop} alt="Description of Image" style={{ width: '99%', height: '550px' }} />
         <h1 style={{
           position: 'absolute',
-          top: '21%',
-          left: '41%',
+          top: '8%',
+          left: '40%',
           color: "white",
           fontSize: 60,
           fontWeight: 'bolder',
@@ -43,7 +43,7 @@ function Contact() {
                   Instagram
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  _deepanshidey03_
+                  explore_abhay__
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -61,7 +61,7 @@ function Contact() {
                   LinkedIn
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  deepanshidey03
+                  Abhay Sahani
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -79,7 +79,7 @@ function Contact() {
                   GitHub
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Deepanshi03
+                  its-AbhaySahani
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -119,7 +119,6 @@ function Contact() {
           </Card>
         </div>
       </div>
-      <Footer/>
     </>
   )
 }
