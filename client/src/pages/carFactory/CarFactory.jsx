@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import ActionAreaCard from "../../components/common/CommonCard.jsx";
+import ActionAreaCard from "../../components/common/CardCommon.jsx";
 
 const CarFactory = () => {
   const cars = [
