@@ -44,7 +44,7 @@ const Footer = () => {
 };
 
 const FooterContainer = styled.footer`
-  background-color: #482c50; /* Dark color */
+  background-color: #121111; /* Dark color */
   color: #bdc3c7; /* Light text color */
   padding: 20px 0;
   width: 100%;
