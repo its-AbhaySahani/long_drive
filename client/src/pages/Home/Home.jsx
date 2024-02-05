@@ -7,7 +7,7 @@ import WhySection from '../../components/whysection/index.jsx';
 import Slide from '../../components/slide/Slide';
 import styled from 'styled-components';
 //import CarCard from "../../components/common/CommonCard"
-import CardDisplay from '../../components/common/CardDisplay.jsx';
+import CardDisplay from '../../components/common/Carddispley.jsx';
 
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
