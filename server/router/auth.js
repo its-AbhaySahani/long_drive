@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 
-//require('../database/conn');
+require('../database/conn');
 // const User = require('../models/userSchema');
 // const Admin = require('../models/adminSchema');
 // const Salecar = require('../models/salecarSchema');
@@ -26,11 +26,11 @@ router.get('/', (req, res) =>{
 
 
 // Client Side Modules ---for-- SignIn, SignUp, SignOut, Contactform
-router.use(require('../clientSideModules/signup'))
-router.use(require('../clientSideModules/signin'))
-router.use(require('../clientSideModules/signout'))
-router.use(require('../clientSideModules/getdata'))
-router.use(require('../clientSideModules/contactform'))
+
+router.use(require('../routes/signin'))
+router.use(require('../routes/signup'))
+router.use(require('../routes/signout'))
+router.use(require('../routes/getdata'))
 
 
 
