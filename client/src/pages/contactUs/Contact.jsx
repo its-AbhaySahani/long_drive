@@ -1,6 +1,6 @@
 import React from 'react';
 
-import maintop from "../../assets/banner.png";
+import banner from "../../assets/background.jpg";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -18,12 +18,12 @@ function Contact() {
   return (
     <>
       <div >
-        <img src={maintop} alt="Description of Image" style={{ width: '99%', height: '550px' }} />
+        <img src={banner} alt="Description of Image" style={{ width: '99%', height: '650px' }} />
         <h1 style={{
           position: 'absolute',
           top: '8%',
           left: '40%',
-          color: "white",
+          color: "black",
           fontSize: 60,
           fontWeight: 'bolder',
           fontFamily: 'Roboto'
