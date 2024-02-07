@@ -4,7 +4,7 @@
 ### Project Name :-  Long Drive : peer-to-peer vehicle rental  platform
 
 ### Important Links:
-1. **Netlify Link** : https://long-drive.netlify.app/
+1. **Netlify Link** : https://longdrive.netlify.app/
 2. **Figma Link** : https://www.figma.com/file/vLmZi6o35G3naNwTovaxiB/LongDrive?type=design&node-id=0%3A1&mode=design&t=TiCNMu5MSFDYYs1r-1
 3. **PostMan Documentation:** https://documenter.getpostman.com/view/32360617/2s9YsT6UPA
 
