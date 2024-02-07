@@ -5,8 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import CarPic1 from "../../assets/car.png"
+import axios from 'axios';
 
-export default function ActionAreaCard() {
+export default function ActionAreaCard({color, make, model, year, carid}) {
+  const handleDelete = (carID) =>{
+    axios.delete("http://localhost:5000/delete/cars/"+carID)
+  }
   return (
     <Card sx={{ width: 300, minWidth:300, aspectRatio:1, borderRadius:5 }}>
       <CardActionArea>
@@ -18,12 +22,19 @@ export default function ActionAreaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Super Modal
+              {model}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Sabse badhiya car h bhai lelo
-            ...1000rs per hour
+            Make: {make}
           </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Color: {color}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Year: {year}
+          </Typography>
+
+          <button style={{background:"#dd3333", marginTop:10, borderRadius: 4}} onClick={e=>handleDelete(carid)}>Delete</button>
         </CardContent>
       </CardActionArea>
     </Card>

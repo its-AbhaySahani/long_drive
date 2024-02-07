@@ -2,6 +2,11 @@
 const express = require('express');
 const router = express.Router();
 const Car = require('../models/AddCarSchema');
+const connectDb = require('../database/conn');
+
+
+
+
 
 // GET all cars
 router.get('/cars', async (req, res) => {
@@ -16,7 +21,6 @@ router.get('/cars', async (req, res) => {
 
 // POST a new car
 router.post('/addcar', async (req, res) => {
-    console.log(req.body);
     const newCar = new Car(req.body);
     try {
         // Generate custom carId
@@ -24,6 +28,7 @@ router.post('/addcar', async (req, res) => {
         
         const savedCar = await newCar.save();
         res.status(201).json(savedCar);
+        return;
     } catch (error) {
         console.error('Error adding car:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -53,7 +58,7 @@ router.patch('/cars/:carId', async (req, res) => {
 });
 
 // DELETE car by carId
-router.delete('/cars/:carId', async (req, res) => {
+router.delete('/delete/cars/:carId', async (req, res) => {
     try {
         const deletedCar = await Car.findOneAndDelete({ carId: req.params.carId });
         res.json(deletedCar);

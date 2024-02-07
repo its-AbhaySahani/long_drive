@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './style.css'
 
@@ -7,8 +7,10 @@ const AddForm = () => {
         brand: '',
         model: '',
         year: '',
-        color: ''
+        color: '',
+        make: "India"
     });
+    
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,8 +19,16 @@ const AddForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/addcar', formData);
-            console.log(response.data);
+            console.log(formData);
+            const response = await fetch("http://localhost:5000/addcar", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+
+            console.log(await response.json());
             // Reset form after successful submission
         } catch (error) {
             console.error('Error adding car:', error);

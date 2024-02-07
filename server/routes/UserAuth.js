@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Get user by user_id
-router.get("/:user_id", async (req, res) => {
+router.get("auth/:user_id", async (req, res) => {
     try {
         const user = await User.findOne({ user_id: req.params.user_id });
         const { password, ...others } = user._doc;

@@ -14,6 +14,8 @@ import addCarForm from "./pages/addcar/addcarform.jsx";
 import Contact from  "./pages/contactUs/Contact.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import AddForm from "./pages/CarForm/AddForm.jsx";
+import Login from "./pages/addcar/index.jsx";
+
 
 const darkTheme = createTheme({
   palette: {
@@ -38,6 +40,7 @@ function App() {
                 <Route path="/addform" element={<AddForm />} />  
                 <Route path="/bikes" element={<BikeFactory />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login/>} />
             </Routes>
           </Router>
         </div>

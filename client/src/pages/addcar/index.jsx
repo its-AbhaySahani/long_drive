@@ -1,6 +1,6 @@
 import LoginSignupPage from "../../components/auth/Auth";
 //import addCarForm from "./addcarform";
-const AddCar = () => {
+const login = () => {
   return (
     <div className="container">
       <div className="home-intro">
@@ -11,4 +11,4 @@ const AddCar = () => {
     </div>
   );
 };
-export default AddCar;
+export default login;

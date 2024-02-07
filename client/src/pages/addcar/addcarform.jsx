@@ -6,9 +6,11 @@ const addCarForm = () => {
         <div className="left">
           <div className="contact">
             <form action="/addcar" method="post" encType="multipart/form-data">
-              <input type="text" name="car" placeholder="CAR DETAILS" />
+              <input type="text" name="car" placeholder="Brand" />
               <input type="text" name="model" placeholder="MODEL NAME" />
               <input type="text" name="fair" placeholder="FAIR PRICE" />
+              <input type="text" name="color" placeholder="color" />
+
               <input type="file" name="image" id="upload-file" />
               <button className="submit">Add your Car</button>
             </form>
