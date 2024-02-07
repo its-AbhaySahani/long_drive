@@ -1,7 +1,7 @@
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HomePage from "./pages/Home/Home.jsx";
-import AddCar from "./pages/addcar";
+import AddCar from "./pages/addcar/addcarform.jsx";
 import AboutPage from "./pages/about";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -13,6 +13,7 @@ import BikeFactory from "./pages/bikeFactory/BikeFactory.jsx";
 import addCarForm from "./pages/addcar/addcarform.jsx";
 import Contact from  "./pages/contactUs/Contact.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import AddForm from "./pages/CarForm/AddForm.jsx";
 
 const darkTheme = createTheme({
   palette: {
@@ -30,14 +31,13 @@ function App() {
         <div className="app-container" style={{ margin: "10px" }}>
           <Router>
             <Routes>
-              <Route exact path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/addcar" element={<AddCar />} />
-              <Route path="/cars" element={<CarFactory />} />
-              <Route path="/addform" element={<addCarForm />} />
-              <Route path="/bikes" element={<BikeFactory />} />
-              <Route path="/contact" element={<Contact />} />
-
+                <Route path="/" element={<HomePage />}/>
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/addcar" element={<AddCar />} /> 
+                <Route path="/cars" element={<CarFactory />} />
+                <Route path="/addform" element={<AddForm />} />  
+                <Route path="/bikes" element={<BikeFactory />} />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
           </Router>
         </div>

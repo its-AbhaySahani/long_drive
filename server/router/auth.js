@@ -28,6 +28,7 @@ router.get('/', (req, res) =>{
 // Client Side Modules ---for-- SignIn, SignUp, SignOut, Contactform
 
 router.use(require('../routes/UserAuth'))
+router.use(require('../routes/AddCar'))
 
 
 
