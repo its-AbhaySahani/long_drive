@@ -5,7 +5,7 @@ const Car = require('../models/AddCarSchema');
 const connectDb = require('../database/conn');
 const multer = require("multer")
 const upload = multer()
-const uuid = require("uuid")
+const {v4} = require("uuid")
 
 // GET all cars
 router.get('/cars', async (req, res) => {
@@ -20,11 +20,11 @@ router.get('/cars', async (req, res) => {
 
 // POST a new car
 router.post('/addcar', upload.none(),async (req, res) => {
-    console.log(req);
+    // console.log(req);
     const newCar = new Car(req.body);
     try {
         // Generate custom carId
-        newCar.carId = uuid.v4;
+        newCar.carId = v4();
         
         const savedCar = await newCar.save();
         res.status(201).json(savedCar);

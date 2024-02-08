@@ -28,7 +28,12 @@ const ViewCar = () => {
             <ActionAreaCard
               title={car.name} // Assuming name field exists in car object
               image={car.image} // Assuming image field exists in car object
-              description={car.description} // Assuming description field exists in car object
+              model={car.model} 
+              mileage={car.mileage}
+              seat={car.seat}
+              color={car.color}
+              brand={car.brand}
+              fair={car.fair}
             />
           </Grid>
         ))}
