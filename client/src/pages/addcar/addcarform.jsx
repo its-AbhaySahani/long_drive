@@ -13,29 +13,31 @@ const AddCarForm = () => {
     image: null,
   });
 
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleImageChange = (e) => {
-    setFormData({ ...formData, image: e.target.files[0] });
+    const reader = new FileReader()
+
+    reader.onload = () =>{
+      setFormData({ ...formData, image: reader.result });  
+    }
+
+    if (e.target.files[0]){
+        reader.readAsDataURL(e.target.files[0])
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('brand', formData.brand);
-      formDataToSend.append('model', formData.model);
-      formDataToSend.append('fair', formData.fair);
-      formDataToSend.append('seat', formData.seat);
-      formDataToSend.append('color', formData.color);
-      formDataToSend.append('mileage', formData.mileage);
-      formDataToSend.append('image', formData.image);
-
-      const response = await axios.post('http://localhost:5000/addcar', formDataToSend, {
+      console.log(formData);
+      const response = await axios.post('http://localhost:5000/addcar', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
       console.log(response.data);

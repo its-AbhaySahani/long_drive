@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(#a44881, #eee4e4);
 }
 
 .section-title {
@@ -168,14 +169,14 @@
 
 @keyframes showSignup {
   0% {
-    background: #d7e7f1;
+    background: #a30877;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
   50% {
     transform: translate(0, 0) scaleY(0.8);
   }
   100% {
-    background-color: #fff;
+    background-color: #fbf7f9;
     transform: translate(-35%, -20px) scaleY(1);
   }
 }

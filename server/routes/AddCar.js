@@ -18,13 +18,15 @@ router.get('/cars', async (req, res) => {
 
 // POST a new car
 router.post('/addcar', async (req, res) => {
-    const newCar = new Car(req.body);
+    console.log(req);
+    // const newCar = new Car(req.body);
     try {
         // Generate custom carId
-        newCar.carId = 'CAR' + Date.now();
+        // newCar.carId = 'CAR' + Date.now();
         
-        const savedCar = await newCar.save();
-        res.status(201).json(savedCar);
+        // const savedCar = await newCar.save();
+        // res.status(201).json(savedCar);
+        res.send("hi")
         return;
     } catch (error) {
         console.error('Error adding car:', error);

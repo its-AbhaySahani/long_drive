@@ -15,6 +15,8 @@ import Contact from  "./pages/contactUs/Contact.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/addcar/Authorization.jsx";
 import ViewCar from "./pages/ViewAddedCar/ViewAddedCar.jsx";
+import userContext from "./context/userContext.jsx";
+import { useState } from "react";
 
 
 const darkTheme = createTheme({
@@ -25,8 +27,10 @@ const darkTheme = createTheme({
 
 import { Fragment } from "react";
 function App() {
+  const user = useState(null);
   return (
     <ThemeProvider theme={darkTheme}>
+      <userContext.Provider value={user}>
       <Fragment>
         <Header />
 
@@ -46,6 +50,7 @@ function App() {
         </div>
         <Footer />
       </Fragment>
+      </userContext.Provider>
     </ThemeProvider>
   );
 }

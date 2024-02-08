@@ -1,5 +1,11 @@
 import "./style.css";
+import { useRef } from "react";
+import axios from "axios";
+
 const loginSignupPage = () => {
+
+  const signupRef = useRef()
+
   const switchPage = (e) => {
     const switchers = document.querySelectorAll(".switcher");
     console.log(`Switchers: ${switchers[1]}`)
@@ -9,6 +15,18 @@ const loginSignupPage = () => {
     console.log("THIS",this)
     e.target.parentElement.classList.add("is-active");
   };
+
+  //signup handler
+  const handleSignUp = () => {
+    axios.post("http://localhost:5000/register", signupRef.current, {
+      headers: {
+        "Content-Type": "application/"
+      }
+    })
+  }
+
+
+
   return (
     <section className="forms-section">
       <div className="forms">
@@ -39,12 +57,16 @@ const loginSignupPage = () => {
             Sign Up
             <span className="underline" />
           </button>
-          <form className="form form-signup">
+          <form className="form form-signup" ref={signupRef}>
             <fieldset>
               <legend>
                 Please, enter your email, password and password confirmation for
                 sign up.
               </legend>
+              <div className="input-block">
+                <label htmlFor="signup-name">Name</label>
+                <input id="signup-name" type="name" required />
+              </div>
               <div className="input-block">
                 <label htmlFor="signup-email">E-mail</label>
                 <input id="signup-email" type="email" required />
