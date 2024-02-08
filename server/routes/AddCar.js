@@ -5,9 +5,6 @@ const Car = require('../models/AddCarSchema');
 const connectDb = require('../database/conn');
 
 
-
-
-
 // GET all cars
 router.get('/cars', async (req, res) => {
     try {

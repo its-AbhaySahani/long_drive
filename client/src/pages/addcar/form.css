@@ -4,12 +4,12 @@ img {
 .login {
   height: 1000px;
   width: 100%;
-  background: radial-gradient(#15a588, #ffffff);
+  background: radial-gradient(#a5156e, #1d1c1c);
   position: relative;
 }
 .login_box {
-  width: 1050px;
-  height: 600px;
+  width: 1150px;
+  height: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
