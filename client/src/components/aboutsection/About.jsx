@@ -6,10 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import {Container} from '@mui/material';
 
 const AboutSection = () => {
 	return (
-		<div className="sub-container">
+		<Container>
 			<h2 className="group-head">A vehicle for every occasion</h2>
 			<p className="content">
 				Welcome to LongDrive, your premier destination for convenient and reliable car and bike rental services.
@@ -19,7 +20,7 @@ const AboutSection = () => {
 				and reliable car and bike rental services. Whether you're exploring a new city, embarking on a weekend
 				getaway, or simply need a reliable mode of transportation, we've got you covered.
 			</p>
-			<CardsContainer>
+			<CardsContainer maxWidth="xl">
 				<Card sx={{ maxWidth: 500 }}>
 					<CardActionArea>
 						<CardMedia
@@ -53,7 +54,7 @@ const AboutSection = () => {
 							<Typography gutterBottom variant="h5" component="div">
 								Super Bikes
 							</Typography>
-							<Typography variant="body2" color="text.secondary">
+							<Typography variant="body" color="text.secondary">
 								Zoom out of town with our affordable one-way and round-trip fares in our intercity
 								travel service. Choose from a variety of superbikes, all driven by top partners,
 								available within 1 hour or book up to 7 days in advance. Covering 90+ cities with over
@@ -84,7 +85,7 @@ const AboutSection = () => {
 					</CardActionArea>
 				</Card>
 			</CardsContainer>
-		</div>
+		</Container>
 	);
 };
 
@@ -94,6 +95,7 @@ const CardsContainer = styled.div`
 	justify-content: space-between;
 	gap: 20px;
 	margin-top: 20px;
+	flex-wrap: nowrap;
 `;
 
 export default AboutSection;

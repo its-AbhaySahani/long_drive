@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
 import ActionAreaCard from "../../components/common/Commoncard.jsx";
 import axios from "axios";
+import './style.css';
 
 const ViewCar = () => {
   const [cars, setCars] = useState([]);

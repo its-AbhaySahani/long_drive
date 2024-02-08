@@ -9,7 +9,8 @@ const carSchema = new mongoose.Schema({
     fair: {type: Number, required: true},
     seat: { type: Number, required: true },
     mileage: { type: String, required: true },
-    image: {type: String, required: true}
+    image: {type: String, required: true},
+    type: {type: String, required: true }
 });
 
 module.exports = mongoose.model('Car', carSchema);

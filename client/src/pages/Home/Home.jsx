@@ -104,8 +104,7 @@ const HomeIntro = styled.div`
 `;
 
 const HomeSection = styled.section`
-	height: 400px;
-	margin-bottom: 13rem;
+	height: calc(100vh - 68.5px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -113,15 +112,12 @@ const HomeSection = styled.section`
 	::before {
 		content: "";
 		position: absolute;
-		height: 80%;
+		height:100%;
 		width: 100%;
 		z-index: -1;
 		opacity: 0.95;
 		top: 0px;
 		left: 0px;
-	}
-	> div {
-		margin-top: 100px;
 	}
 	> div > h1 {
 		font-family: "Anton", sans-serif;

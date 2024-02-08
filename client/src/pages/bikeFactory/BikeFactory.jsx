@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import ActionAreaCard from "../../components/common/Commoncard.jsx";
+import Dabba from "../../components/common/Dabba.jsx";
 
 const BikeFactory = () => {
   const bikes = [
@@ -16,7 +16,7 @@ const BikeFactory = () => {
       <Grid container spacing={2}>
         {bikes.map((car) => (
           <Grid key={car.id} item xs={12} sm={6} md={4} lg={3}>
-            <ActionAreaCard
+            <Dabba
               title={car.name}
               image={car.image}
               description={car.description}
