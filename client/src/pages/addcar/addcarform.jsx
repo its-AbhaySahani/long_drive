@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './form.css';
 
@@ -13,7 +13,7 @@ const AddCarForm = () => {
     image: null,
   });
 
-
+  const ref = useRef()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,10 +34,10 @@ const AddCarForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(formData);
+      // console.log(formData);
       const response = await axios.post('http://localhost:5000/addcar', formData, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'multipart/form-data',
         },
       });
       console.log(response.data);
@@ -53,7 +53,7 @@ const AddCarForm = () => {
       <div className="login_box">
         <div className="left">
           <div className="contact">
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <form onSubmit={handleSubmit} encType="multipart/form-data" ref={ref}>
               <input type="text" name="brand" placeholder="Brand" onChange={handleChange} />
               <input type="text" name="model" placeholder="Model Name" onChange={handleChange} />
               <input type="text" name="fair" placeholder="Fair Price per Hour" onChange={handleChange} />

@@ -3,7 +3,9 @@ const express = require('express');
 const router = express.Router();
 const Car = require('../models/AddCarSchema');
 const connectDb = require('../database/conn');
-
+const multer = require("multer")
+const upload = multer()
+const uuid = require("uuid")
 
 // GET all cars
 router.get('/cars', async (req, res) => {
@@ -17,16 +19,15 @@ router.get('/cars', async (req, res) => {
 });
 
 // POST a new car
-router.post('/addcar', async (req, res) => {
+router.post('/addcar', upload.none(),async (req, res) => {
     console.log(req);
-    // const newCar = new Car(req.body);
+    const newCar = new Car(req.body);
     try {
         // Generate custom carId
-        // newCar.carId = 'CAR' + Date.now();
+        newCar.carId = uuid.v4;
         
-        // const savedCar = await newCar.save();
-        // res.status(201).json(savedCar);
-        res.send("hi")
+        const savedCar = await newCar.save();
+        res.status(201).json(savedCar);
         return;
     } catch (error) {
         console.error('Error adding car:', error);
