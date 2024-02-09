@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const Car = require('../models/AddCarSchema');
-const connectDb = require('../database/conn');
 const multer = require("multer")
 const upload = multer()
 const {v4} = require("uuid")

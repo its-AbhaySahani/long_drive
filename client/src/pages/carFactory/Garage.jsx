@@ -4,7 +4,7 @@ import ActionAreaCard from "../../components/common/Commoncard.jsx";
 import axios from "axios";
 import './style.css';
 
-const ViewCar = () => {
+const Garage = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const ViewCar = () => {
   return (
     <div className="page-container">
       <Typography variant="h2" gutterBottom>
-        YOUR CARS
+        Explore Vehicles
       </Typography>
       <Grid container spacing={2}>
         {cars.map((car) => (
@@ -45,4 +45,4 @@ const ViewCar = () => {
   );
 };
 
-export default ViewCar;
+export default Garage;

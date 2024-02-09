@@ -8,14 +8,13 @@ import Footer from "./components/footer/Footer";
 import Slide from "./components/slide/Slide";
 import AboutSection from "./components/aboutsection/About";
 import WhySection from "./components/whysection/index.jsx";
-import CarFactory from "./pages/carFactory/CarFactory.jsx";
-import BikeFactory from "./pages/bikeFactory/BikeFactory.jsx";
 import addCarForm from "./pages/addcar/addcarform.jsx";
 import Contact from  "./pages/contactUs/Contact.jsx";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/addcar/Authorization.jsx";
 import ViewCar from "./pages/ViewAddedCar/ViewAddedCar.jsx";
 import userContext from "./context/userContext.jsx";
+import Garage from "./pages/carFactory/Garage.jsx"
 import { useState } from "react";
 
 
@@ -40,8 +39,7 @@ function App() {
                 <Route path="/" element={<HomePage />}/>
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/addcar" element={<AddCar />} /> 
-                <Route path="/cars" element={<CarFactory />} />
-                <Route path="/bikes" element={<BikeFactory />} />
+                <Route path="/vehicle" element={<Garage />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/viewcar" element={<ViewCar />} />

@@ -11,6 +11,7 @@ const AddCarForm = () => {
     color: '',
     mileage: '',
     type: '',
+    city: '',
     image: null,
   });
 
@@ -62,6 +63,7 @@ const AddCarForm = () => {
               <input type="text" name="color" placeholder="Color" onChange={handleChange} />
               <input type="text" name="mileage" placeholder="Mileage" onChange={handleChange} />
               <input type="text" name="type" placeholder="Type" onChange={handleChange} />
+              <input type="text" name="city" placeholder="City" onChange={handleChange} />
               <input type="file" name="image" id="upload-file" onChange={handleImageChange} />
               <button className="submit" type="submit">Add your Car</button>
             </form>
