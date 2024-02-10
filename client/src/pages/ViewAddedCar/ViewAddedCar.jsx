@@ -19,7 +19,7 @@ const ViewCar = () => {
   }, []); // Empty dependency array ensures useEffect runs only once on component mount
 
   return (
-    <div className="page-container">
+    <div >
       <Typography variant="h2" gutterBottom>
         YOUR CARS
       </Typography>
