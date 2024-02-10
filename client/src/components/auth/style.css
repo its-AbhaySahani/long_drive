@@ -62,7 +62,7 @@
   font-family: inherit;
   font-size: 16px;
   letter-spacing: 0.5px;
-  color: #999;
+  color: #382f2f;
   background-color: transparent;
   border: none;
   outline: none;
@@ -169,7 +169,7 @@
 
 @keyframes showSignup {
   0% {
-    background: #a30877;
+    background: #d3c8d0;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
   50% {
@@ -232,7 +232,7 @@
 
 .input-block label {
   font-size: 14px;
-  color: #a1b4b4;
+  color: #090809;
 }
 
 .input-block input {
@@ -269,13 +269,13 @@
 
 .btn-login {
   color: #fbfdff;
-  background: #a7e245;
+  background: #73b011;
   transform: translateX(-30%);
 }
 
 .btn-signup {
-  color: #a7e245;
-  background: #fbfdff;
+  color: #608f13;
+  background: #f0faf0;
   box-shadow: inset 0 0 0 2px #a7e245;
   transform: translateX(30%);
 }

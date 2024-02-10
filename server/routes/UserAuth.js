@@ -3,6 +3,7 @@ const User = require("../models/User");
 
 // Register
 router.post("/register", async (req, res) => {
+    console.log()
     try {
         const newUser = new User({
             username: req.body.username,

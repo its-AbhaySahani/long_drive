@@ -64,6 +64,10 @@ const loginSignupPage = () => {
                 sign up.
               </legend>
               <div className="input-block">
+                <label htmlFor="signup-username">Username</label>
+                <input id="signup-username" type="username" required />
+              </div>
+              <div className="input-block">
                 <label htmlFor="signup-name">Name</label>
                 <input id="signup-name" type="name" required />
               </div>
@@ -75,12 +79,7 @@ const loginSignupPage = () => {
                 <label htmlFor="signup-password">Password</label>
                 <input id="signup-password" type="password" required />
               </div>
-              <div className="input-block">
-                <label htmlFor="signup-password-confirm">
-                  Confirm password
-                </label>
-                <input id="signup-password-confirm" type="password" required />
-              </div>
+              
             </fieldset>
             <button type="submit" className="btn-signup">
               Continue
