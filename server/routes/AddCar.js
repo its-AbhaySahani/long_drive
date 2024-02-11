@@ -83,4 +83,26 @@ router.get('/cars/:carId', async (req, res) => {
 });
 
 
+// GET cars with filtering options
+router.get('/filter', async (req, res) => {
+    try {
+        const { type, color, brand, city, seat, fare } = req.query;
+        let query = {};
+
+        if (type) query.type = type;
+        if (color) query.color = color;
+        if (brand) query.brand = brand;
+        if (city) query.city = city;
+        if (seat) query.seat = seat;
+        if (fare) query.fare = fare;
+
+        const filteredCars = await Car.find(query);
+        res.json(filteredCars);
+    } catch (error) {
+        console.error('Error filtering cars:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 module.exports = router;
