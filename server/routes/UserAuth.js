@@ -1,5 +1,24 @@
 const router = require("express").Router();
 const User = require("../models/User");
+const jwt = require("jsonwebtoken");
+
+// Middleware to verify JWT token
+const verifyToken = (req, res, next) => {
+    const token = req.headers.authorization;
+
+    if (!token) {
+        return res.status(401).json({ message: "Access denied, token missing" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ message: "Token is not valid" });
+    }
+};
 
 // Register
 router.post("/register", async (req, res) => {
@@ -24,35 +43,33 @@ router.post("/login", async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
 
-        if (!user) {
-            res.status(400).json({ message: "Invalid email or password" });
-        } else {
-            if (user.password !== req.body.password) {
-                res.status(400).json({ message: "Invalid email or password" });
-            } else {
-                const { password, ...others } = user._doc;
-                res.status(200).json(others);
-            }
+        if (!user || user.password !== req.body.password) {
+            return res.status(400).json({ message: "Invalid email or password" });
         }
+
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+
+        res.status(200).json({ token });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Login failed" });
     }
 });
 
-// Get user by user_id
-router.get("auth/:username", async (req, res) => {
+// Protected route example
+router.get("/profile", verifyToken, async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.params.username });
+        const user = await User.findById(req.user.userId);
+
         if (!user) {
-            res.status(404).json({ message: "User not found" });
-        } else {
-            const { password, ...others } = user._doc;
-            res.status(200).json(others);
+            return res.status(404).json({ message: "User not found" });
         }
+
+        res.status(200).json(user);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: "Failed to fetch user" });
+        res.status(500).json({ message: "Failed to fetch user profile" });
     }
 });
 
