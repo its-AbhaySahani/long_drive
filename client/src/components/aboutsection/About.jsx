@@ -10,7 +10,7 @@ import {Container} from '@mui/material';
 
 const AboutSection = () => {
 	return (
-		<Container>
+		<Container maxWidth="xl">
 			<h2 className="group-head">A vehicle for every occasion</h2>
 			<p className="content">
 				Welcome to LongDrive, your premier destination for convenient and reliable car and bike rental services.

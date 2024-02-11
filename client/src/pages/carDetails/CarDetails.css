@@ -49,7 +49,7 @@
   right: 0;
   width: 50%; /* Adjust width as needed */
   height: 100%;
-  background: url('https://www.nerdwallet.com/assets/blog/wp-content/uploads/2018/01/why-kei-51455-1440x864.jpg') center/cover; /* Replace 'path_to_your_image.jpg' with your image path */
+  background: url('https://www.nerdwallet.com/assets/blog/wp-content/uploads/2018/01/why-kei-51455-1440x864.jpg') ; /* Replace 'path_to_your_image.jpg' with your image path */
   background-size: auto; /* Ensure the image covers the entire container */
   z-index: -1; /* Set z-index to render behind other elements */
 }
