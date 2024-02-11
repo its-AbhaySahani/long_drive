@@ -1,0 +1,15 @@
+/* CarGrid.css */
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 10px;
+  padding: 20px;
+}
+
+.car-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}

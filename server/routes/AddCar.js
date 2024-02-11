@@ -35,7 +35,7 @@ router.post('/addcar', upload.none(),async (req, res) => {
 });
 
 // PUT update car by carId
-router.put('/cars/:carId', async (req, res) => {
+router.put('/put/cars/:carId', async (req, res) => {
     try {
         const updatedCar = await Car.findOneAndUpdate({ carId: req.params.carId }, req.body, { new: true });
         res.json(updatedCar);
@@ -46,7 +46,7 @@ router.put('/cars/:carId', async (req, res) => {
 });
 
 // PATCH update specific fields of car by carId
-router.patch('/cars/:carId', async (req, res) => {
+router.patch('/patch/cars/:carId', async (req, res) => {
     try {
         const updatedCar = await Car.findOneAndUpdate({ carId: req.params.carId }, { $set: req.body }, { new: true });
         res.json(updatedCar);

@@ -1,29 +1,35 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import carimage from "../../assets/car.png"
-export default function Dabba() {
+import * as React from "react";
+import axios from "axios";
+import ActionAreaCard from "./Commoncard";
+
+export default function Dabba({ carid }) {
+  const [car, setCar] = React.useState({});
+  React.useEffect(() => {
+    axios.get("http://localhost:5000/cars/" + carid).then((res) => {
+      setCar(res.data);
+    });
+  }, [car]);
+
+  
+  const handleCardClick = (carId) => {
+    // Navigate to car details page with specific car ID
+    // You can define the route structure in your React Router configuration
+  };
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image= {carimage}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Vehicle
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Rent You Vehicle on hourly basis
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <ActionAreaCard
+      title={car.name} // Assuming name field exists in car object
+      image={car.image} // Assuming image field exists in car object
+      model={car.model}
+      mileage={car.mileage}
+      seat={car.seat}
+      color={car.color}
+      brand={car.brand}
+      fair={car.fair}
+      type={car.type}
+      city={car.city}
+      carid={car.carId}
+      onClick={() => handleCardClick(car._id)}
+    />
   );
 }

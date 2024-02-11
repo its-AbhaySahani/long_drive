@@ -1,27 +1,83 @@
+/* CarDetails.css */
+
 .car-details-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dd65c1; /* Background color for the page */
+  position: relative; /* Set position to relative for rain animation */
+}
+
+.car-info {
+  flex: 1;
+  padding: 40px;
+  text-align: left; /* Align text to the left */
+  max-width: 100%; /* Limit max width to 50% of the container */
+  z-index: 1; /* Ensure details are above background image */
+}
+
+.car-image {
+  flex: 1;
+  max-width: 40%;
+  z-index: 1; /* Ensure image is above background image */
+}
+
+.rent-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0b8a27; /* Button background color */
+  color: #fff; /* Button text color */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for button background color */
+}
+
+.rent-button:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+
+.loading, .not-found {
+  text-align: center;
+  color: #000; /* Text color for loading and not found messages */
+}
+
+/* Fixed image on the right side */
+.fixed-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Adjust width as needed */
+  height: 100%;
+  background: url('https://www.nerdwallet.com/assets/blog/wp-content/uploads/2018/01/why-kei-51455-1440x864.jpg') center/cover; /* Replace 'path_to_your_image.jpg' with your image path */
+  background-size: auto; /* Ensure the image covers the entire container */
+  z-index: -1; /* Set z-index to render behind other elements */
+}
+
+/* Rain animation */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* Set z-index to render behind other elements */
+}
+
+.rain-drop {
+  position: absolute;
+  background: #7ec0ee; /* Raindrop color */
+  width: 2px;
+  height: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
   }
-  
-  .car-image {
-    width: 300px; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px;
+  100% {
+    transform: translateY(100vh) rotate(360deg);
   }
-  
-  .car-info {
-    max-width: 500px;
-  }
-  
-  .car-info h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .car-info p {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
+}

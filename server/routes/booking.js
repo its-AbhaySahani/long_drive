@@ -1,36 +1,43 @@
-const express = require("express");
-const router = express.Router();
-const Booking = require("../models/bookingModel");
-const Car = require("../models/AddCarSchema");
+const router = require('express').Router();
+const Rental = require('../models/Rental');
+const Car = require('../models/Car');
 
+// Create a rental
+router.post('/rent', async (req, res) => {
+  try {
+    const { username, carId, startDate, endDate, totalAmount } = req.body;
 
-router.post("/bookcar", async(req,res) => {
-
-    req.body.transactionId ='1234'
-    try{
-        const newbooking = new Booking(req.body)
-        await newbooking.save()
-        const car = await Car.findOne({_id : req.body.car})
-        car.bookedTimeSlots.push(req.body.bookedTimeSlots)
-
-        await car.save()
-        res.send('Your booking is successfull')
-    } catch (error) {
-        return res.status(400).json(error);
+    // Check if the car exists
+    const carExists = await Car.findById(carId);
+    if (!carExists) {
+      return res.status(404).json({ message: 'Car not found' });
     }
+
+    const newRental = new Rental({
+      username,
+      carId,
+      startDate,
+      endDate,
+      totalAmount
+    });
+
+    const rental = await newRental.save();
+    res.status(200).json(rental);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to create rental' });
+  }
 });
 
-router.get("/getallbookings", async(req, res) => {
-
-    try {
-
-        const bookings = await Booking.find().populate('car')
-        res.send(bookings)
-        
-    } catch (error) {
-        return res.status(400).json(error);
-    }
-  
+// Get all rentals
+router.get('/rentals', async (req, res) => {
+  try {
+    const rentals = await Rental.find();
+    res.status(200).json(rentals);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to fetch rentals' });
+  }
 });
 
 module.exports = router;

@@ -30,6 +30,7 @@ const LoginSignupPage = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
+      setIsLoading(true);
       const response = await axios.post("http://localhost:5000/register", formData, {
         headers: {
           "Content-Type": "application/json",
@@ -40,9 +41,11 @@ const LoginSignupPage = () => {
       if (response.status === 200) {
         console.log("Registration successful:", response.data);
         setUser(response.data);
-        Navigate("/dashboard");
+        navigate("/");
       }
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Registration failed:", error);
     }
   };
@@ -50,16 +53,23 @@ const LoginSignupPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      setIsLoading(true);
       const response = await axios.post("http://localhost:5000/login", formData);
       if(response.status === 200){
         setUser(response.data);
         console.log("Login successful:", response.data);
+        navigate("/")
       }
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Login failed:", error);
     }
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <section className="forms-section">
       <div className="forms">

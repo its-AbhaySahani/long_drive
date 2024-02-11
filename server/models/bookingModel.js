@@ -1,50 +1,29 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const bookingSchema = new mongoose.Schema({
+const rentalSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  carId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Car',
+    required: true
+  },
+  startDate: {
+    type: Date,
+    required: true
+  },
+  endDate: {
+    type: Date,
+    required: true
+  },
+  totalAmount: {
+    type: Number,
+    required: true
+  }
+});
 
+const Rental = mongoose.model('Rental', rentalSchema);
 
-      car : {type : mongoose.Schema.Types.ObjectID , ref:'cars'},
-      user : {type : mongoose.Schema.Types.ObjectID , ref:'users'},
-      bookedTimeSlots : {
-          from : {type : String} ,
-          to : {type : String}
-      } ,
-      totalHours : {type : Number},
-      totalAmount : {type : Number},
-      transactionId : {type : String},
-      driverRequired : {type : Boolean}
-
-
-},
-  {timestamps : true}
-)
-
-const bookingModel = mongoose.model('bookings' , bookingSchema)
-
-module.exports = bookingModel
-
-
-/*const mongoose = require("mongoose");
-
-const bookingSchema = new mongoose.Schema({
-
-
-    car : {type : mongoose.Schema.Types.ObjectID , ref:'cars'},
-    user : {type : mongoose.Schema.Types.ObjectID , ref:'users'},
-    bookedTimeSlots : {
-        from : {type : String} ,
-        to : {type : String}
-    } ,
-    totalHours : {type : Number},
-    totalAmount : {type : Number},
-    transactionId : {type : String},
-    driverRequired : {type : Boolean}
-
-
-},
-{timestamps : true}
-)
-
-const bookingModel = mongoose.model('bookings' , bookingSchema)
-
-module.exports = bookingModel */
+module.exports = Rental;

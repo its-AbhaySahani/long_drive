@@ -4,20 +4,32 @@ import ActionAreaCard from "../../components/common/Commoncard.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './style.css';
+import {useParams} from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
 
-const Garage = () => {
+export default () => {
   const [cars, setCars] = useState([]);
+  const { city } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch all added cars from the server using Axios
-    axios.get("http://localhost:5000/cars")
+    axios.get("http://localhost:5000/car/filter?city="+city)
       .then(response => {
-        setCars(response.data);
+        if(response.status === 200){
+          setCars(response.data);
+        }
+        else if(response.status === 404){
+          console.log("No Cars Found");
+        }
+        
+        setLoading(false);
       })
       .catch(error => {
+        setLoading(false);
         console.error("Error fetching cars:", error);
       });
-  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+  }, [city]); // Empty dependency array ensures useEffect runs only once on component mount
 
    // Click handler for each card
    const handleCardClick = (carId) => {
@@ -25,6 +37,23 @@ const Garage = () => {
     // You can define the route structure in your React Router configuration
   };
 
+  if(loading){
+    return (
+      <div className="loading">
+        <CircularProgress />
+      </div>
+    );
+  }
+  else if (cars.length === 0) {
+    return (
+      <div className="no-cars">
+        <Typography variant="h2" gutterBottom>
+          No Cars Found
+        </Typography>
+        <Link to="/addcar">Add Car</Link>
+      </div>
+    );
+  }
   return (
     <div >
       <Typography variant="h2" gutterBottom>
@@ -54,4 +83,3 @@ const Garage = () => {
   );
 };
 
-export default Garage;

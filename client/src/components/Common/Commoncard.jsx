@@ -8,10 +8,6 @@ import { CardActionArea } from '@mui/material';
 import axios from 'axios';
 
 export default function ActionAreaCard({ color, brand, model, carid, seat, fair, mileage, image }) {
-  const handleDelete = (carID) => {
-    axios.delete(`http://localhost:5000/delete/cars/${carID}`); // Use template literals for dynamic URL
-  }
-
   return (
     <Card sx={{ width: 300, minWidth: 300, aspectRatio: 1, borderRadius: 5 }}>
       <Link to={`/cars/${carid}`} style={{ textDecoration: 'none' }}> {/* Link to car details page */}
@@ -42,7 +38,6 @@ export default function ActionAreaCard({ color, brand, model, carid, seat, fair,
             <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Seat</span> <span>{seat}</span>
             </Typography>
-            <button style={{ background: "#dd3333", marginTop: 10, borderRadius: 4 }} onClick={e => handleDelete(carid)}>Delete</button>
           </CardContent>
         </CardActionArea>
       </Link>

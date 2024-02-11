@@ -17,6 +17,7 @@ import ViewCar from "./pages/ViewAddedCar/ViewAddedCar.jsx";
 import userContext from "./context/userContext.jsx";
 import Garage from "./pages/carFactory/Garage.jsx";
 import CarDetails from "./pages/carDetails/Cardetails.jsx";
+import SearchCars from "./pages/SearchedCars/SearchCars.jsx";
 import "./App.css";
 
 const darkTheme = createTheme({
@@ -56,7 +57,8 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/viewcar" element={<ViewCar />} />
-                  <Route path="/cars/:carId" element={CarDetails} />
+                  <Route path="/cars/:carId" element={<CarDetails/>} />
+                  <Route path="/search/:city" element={<SearchCars/>} />
                 </Routes>
               </Router>
             )}

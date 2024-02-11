@@ -1,16 +1,19 @@
 .garage{
-    margin: 20px 0;
+    margin: 20px auto;
     padding: 1px 30px;
     background-color: #363636d0;
-    backdrop-filter: blur();
     border-radius: 15px;
+    /* display: inline-block; */
 }
 
 .car-cards{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 30px;
     flex-wrap: nowrap;
     overflow: scroll;
     padding-bottom: 20px;
+    justify-content: space-around;
 }
