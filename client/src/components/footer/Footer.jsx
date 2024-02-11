@@ -1,130 +1,70 @@
 // Footer.js
+import React from 'react';
+import LDLogo from '../../assets/logo.png';
+import './Footer.css';
 
-import React from "react";
-import styled from "styled-components";
-import LD from  "../../assets/logo.png";
+function Footer() {
+  const listItemStyle = {
+    margin: '5px 0',
+    color: 'white',
+    textDecoration: 'none',
+  };
 
+  const listGroupStyle = {
+    margin: '0 20px',
+  };
 
-const Footer = () => {
   return (
-    <FooterContainer>
-      <FooterContent>
-        <LogoContainer>
-          <img src= {LD}  />
-        </LogoContainer>
-        <ContactInfo>
-          <h3>Contact Us</h3>
-          <p>Email: abhay.cs.777@gmail.com</p>
-          <p>Phone: +91 9118660908</p>
-        </ContactInfo>
-        <DeveloperInfo>
-          <h3>Developed by</h3>
-          <p>Abhay Sahani</p>
-        </DeveloperInfo>
-        <SocialMedia>
-          <h3>Follow Us</h3>
-          <SocialLinks>
-            <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
-              <img src="./images/facebook_icon.png" alt="Facebook" />
-            </SocialIcon>
-            <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
-              <img src="./images/twitter_icon.png" alt="Twitter" />
-            </SocialIcon>
-            <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
-              <img src="./images/instagram_icon.png" alt="Instagram" />
-            </SocialIcon>
-          </SocialLinks>
-        </SocialMedia>
-      </FooterContent>
-      <CopyrightText>
-        &copy; {new Date().getFullYear()} Developed by Abhay Sahani
-      </CopyrightText>
-    </FooterContainer>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <div className="logo-container">
+          <img src={LDLogo} alt="LD Logo" className="logo" />
+          <div>
+            <h1 className="footer-heading">Long Drive</h1>
+            <h2 className="footer-subheading">Make Your Ride Sensual</h2>
+            <p className="footer-contact-info">Abhay Sahani<br/>+91 9118660908<br/>abhay.cs.777@gmail.com</p>
+          </div>
+        </div>
+
+        <div className="link-groups">
+          <div className="link-group" style={listGroupStyle}>
+            <h3>EXPLORE WITH US</h3>
+            <ul>
+              <li style={listItemStyle}>Super Cars</li>
+              <li style={listItemStyle}>Car</li>
+              <li style={listItemStyle}>Bikes</li>
+              <li style={listItemStyle}>Scooty</li>
+              <li style={listItemStyle}>Super Bikes</li>
+            </ul>
+          </div>
+
+          <div className="link-group" style={listGroupStyle}>
+            <h3>CONNECT WITH US</h3>
+            <ul>
+              <li style={listItemStyle}>Instagram</li>
+              <li style={listItemStyle}>LinkedIn</li>
+              <li style={listItemStyle}>Github</li>
+              <li style={listItemStyle}>Facebook</li>
+              <li style={listItemStyle}>Twitter</li>
+            </ul>
+          </div>
+
+          <div className="link-group" style={listGroupStyle}>
+            <h3>CUSTOMER SUPPORT</h3>
+            <ul>
+              <li style={listItemStyle}>Contact Us</li>
+              <li style={listItemStyle}>Terms Of Use</li>
+              <li style={listItemStyle}>Agreements</li>
+              <li style={listItemStyle}>About Developer</li>
+              <li style={listItemStyle}>Privacy Policy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p className="copyright">&copy; 2024 LongDrive. All rights reserved.</p>
+    </footer>
   );
-};
-
-const FooterContainer = styled.footer`
-  background-color: #121111; /* Dark color */
-  color: #bdc3c7; /* Light text color */
-  padding: 20px 0;
-  width: 100%;
-`;
-
-const FooterContent = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: flex-start;
-`;
-
-const LogoContainer = styled.div`
-  width: 250px; /* Adjust as needed */
-  img {
-    max-width: 100%;
-  }
-`;
-
-const ContactInfo = styled.div`
-  text-align: left;
-  flex: 1;
-  padding: 0 20px;
-
-  h3 {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin: 5px 0;
-    color: #bdc3c7;
-  }
-`;
-
-const DeveloperInfo = styled.div`
-  text-align: left;
-  flex: 1;
-  padding: 0 20px;
-
-  h3,
-  p {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-`;
-
-const SocialMedia = styled.div`
-  text-align: left;
-  flex: 1;
-  padding: 0 20px;
-
-  h3 {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-`;
-
-const SocialIcon = styled.a`
-  img {
-    max-width: 30px; /* Adjust as needed */
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-`;
-
-const CopyrightText = styled.div`
-  text-align: center;
-  margin-top: 20px;
-  color: #bdc3c7;
-`;
+}
 
 export default Footer;
