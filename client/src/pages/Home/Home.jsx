@@ -1,6 +1,7 @@
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './home.css';
 import AboutSection from '../../components/aboutsection/About';
 import WhySection from '../../components/whysection/index.jsx';
@@ -23,6 +24,29 @@ const HomePage = () => {
 	const [ value, setValue ] = useState([ dayjs('2022-04-17'), dayjs('2022-04-21') ]);
 
 	const [ location, setLocation ] = useState('');
+	const [filterOptions, setFilterOptions] = useState({
+        type: '',
+        color: '',
+        brand: '',
+        city: '',
+        seat: '',
+        fare: ''
+    });
+    const [filteredCars, setFilteredCars] = useState([]);
+
+	useEffect(() => {
+        const fetchFilteredCars = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/car/filter', { params: filterOptions });
+                setFilteredCars(response.data);
+            } catch (error) {
+                console.error('Error fetching filtered cars:', error);
+            }
+        };
+        fetchFilteredCars();
+    }, [filterOptions]);
+
+
 	return (
 		<Container>
 			<HomeSection>
@@ -177,7 +201,7 @@ const HomePage = () => {
 				</div>
 			</HomeSection>
 			<AboutSection />
-			<CardDisplay headline="Explore SuperCars" cards={arr} />
+			<CardDisplay headline="Explore SuperCars" cards={filteredCars} />
 			<CardDisplay headline="Explore SuperBikes" cards={arr} />
 			<CardDisplay headline="Budget Vehicles" cards={arr} />
 			<CardDisplay headline="Family Trip" cards={arr} />

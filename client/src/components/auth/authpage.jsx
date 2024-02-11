@@ -1,10 +1,22 @@
 import { useRef } from "react";
 import axios from "axios";
+import { useState, useContext } from "react";
+import userContext from "../../context/userContext";
+import {useNavigate} from "react-router-dom";
 import "./style.css";
 
 const LoginSignupPage = () => {
-  const signupRef = useRef();
-  const loginRef = useRef();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    email: "",
+    name: "",
+  });
+
+  const [user, setUser] = useContext(userContext);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const switchPage = (e) => {
     const switchers = document.querySelectorAll(".switcher");
@@ -13,38 +25,38 @@ const LoginSignupPage = () => {
     );
     e.target.parentElement.classList.add("is-active");
   };
+  
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const formData = {
-        username: signupRef.current.username.value,
-        name: signupRef.current.name.value,
-        email: signupRef.current.email.value,
-        password: signupRef.current.password.value,
-      };
-      const response = await axios.post("http://localhost:5000/register", formData);
-      // Handle successful registration, e.g., redirect to login page
-      console.log("Registration successful:", response.data);
+      const response = await axios.post("http://localhost:5000/register", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      
+      });
+
+      if (response.status === 200) {
+        console.log("Registration successful:", response.data);
+        setUser(response.data);
+        Navigate("/dashboard");
+      }
     } catch (error) {
       console.error("Registration failed:", error);
-      // Handle registration failure, e.g., display error message to the user
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const formData = {
-        email: loginRef.current.email.value,
-        password: loginRef.current.password.value,
-      };
       const response = await axios.post("http://localhost:5000/login", formData);
-      // Handle successful login, e.g., store token in local storage and redirect to dashboard
-      console.log("Login successful:", response.data);
+      if(response.status === 200){
+        setUser(response.data);
+        console.log("Login successful:", response.data);
+      }
     } catch (error) {
       console.error("Login failed:", error);
-      // Handle login failure, e.g., display error message to the user
     }
   };
 
@@ -59,47 +71,50 @@ const LoginSignupPage = () => {
           <form className="form form-login" onSubmit={handleLogin}>
             <fieldset>
               <legend>Please, enter your email and password for login.</legend>
+            </fieldset>
               <div className="input-block">
-                <label htmlFor="login-email">E-mail</label>
-                <input id="login-email" type="email" ref={loginRef} name="email" required />
+                <label htmlFor="login-username">Username</label>
+                <input id="login-username" type="Text" name="username" value={formData.username} onChange={e=>setFormData({...formData, username: e.target.value})} required />
               </div>
               <div className="input-block">
                 <label htmlFor="login-password">Password</label>
-                <input id="login-password" type="password" ref={loginRef} name="password" required />
+                <input id="login-password" type="password" name="password" value={formData.password} onChange={e=>setFormData({...formData, password: e.target.value})} required />
               </div>
-            </fieldset>
             <button type="submit" className="btn-login">
               Login
             </button>
           </form>
         </div>
+
+
         <div className="form-wrapper">
           <button type="button" onClick={switchPage} className="switcher switcher-signup">
             Sign Up
             <span className="underline" />
           </button>
+          
           <form className="form form-signup" onSubmit={handleSignUp}>
             <fieldset>
               <legend>
                 Please, enter your email, password, and password confirmation for sign up.
               </legend>
+            </fieldset>
               <div className="input-block">
                 <label htmlFor="signup-username">Username</label>
-                <input id="signup-username" type="username" ref={signupRef} name="username" required />
+                <input id="signup-username" type="Text" name="username" value={formData.username} onChange={e=>setFormData({...formData, username: e.target.value})} required />
               </div>
               <div className="input-block">
                 <label htmlFor="signup-name">Name</label>
-                <input id="signup-name" type="name" ref={signupRef} name="name" required />
+                <input id="signup-name" type="Text"  name="name" value={formData.name} onChange={e=>setFormData({...formData, name: e.target.value})} required />
               </div>
               <div className="input-block">
                 <label htmlFor="signup-email">E-mail</label>
-                <input id="signup-email" type="email" ref={signupRef} name="email" required />
+                <input id="signup-email" type="email"  name="email" value={formData.email} onChange={e=>setFormData({...formData, email: e.target.value})} required />
               </div>
               <div className="input-block">
                 <label htmlFor="signup-password">Password</label>
-                <input id="signup-password" type="password" ref={signupRef} name="password" required />
+                <input id="signup-password" type="password"  name="password" value={formData.password} onChange={e=>setFormData({...formData, password: e.target.value})} required />
               </div>
-            </fieldset>
             <button type="submit" className="btn-signup">
               Continue
             </button>

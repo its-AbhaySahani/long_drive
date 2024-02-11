@@ -15,43 +15,58 @@ const AddCarForm = () => {
     image: null,
   });
 
-  const ref = useRef()
+  const [showRain, setShowRain] = useState(false);
+
+  const ref = useRef();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleImageChange = (e) => {
-    const reader = new FileReader()
+    const reader = new FileReader();
 
-    reader.onload = () =>{
-      setFormData({ ...formData, image: reader.result });  
-    }
+    reader.onload = () => {
+      setFormData({ ...formData, image: reader.result });
+    };
 
-    if (e.target.files[0]){
-        reader.readAsDataURL(e.target.files[0])
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]);
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log(formData);
       const response = await axios.post('http://localhost:5000/addcar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
       console.log(response.data);
-      // Add any logic to handle successful response (e.g., show a success message)
+      setShowRain(true);
     } catch (error) {
       console.error('Error adding car:', error);
-      // Add any logic to handle error response (e.g., show an error message)
     }
   };
 
   return (
     <section className="login">
+      {showRain && (
+        <div className="rain-container">
+          {[...Array(100)].map((_, index) => (
+            <div
+              key={index}
+              className="rain-drop"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${Math.random() * 2 + 1}s`,
+                animationDelay: `${Math.random()}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
       <div className="login_box">
         <div className="left">
           <div className="contact">

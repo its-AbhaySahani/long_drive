@@ -84,7 +84,7 @@ router.get('/cars/:carId', async (req, res) => {
 
 
 // GET cars with filtering options
-router.get('/filter', async (req, res) => {
+router.get('/car/filter', async (req, res) => {
     try {
         const { type, color, brand, city, seat, fare } = req.query;
         let query = {};

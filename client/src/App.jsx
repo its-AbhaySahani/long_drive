@@ -32,7 +32,7 @@ function App() {
     // Simulate data loading delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     // Cleanup function to clear the timer
     return () => clearTimeout(timer);

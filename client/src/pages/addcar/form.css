@@ -1,12 +1,42 @@
+/* style.css */
+
 img {
   width: 100%;
 }
+
 .login {
   height: 1000px;
   width: 100%;
   background: radial-gradient(#a5156e, #1d1c1c);
   position: relative;
+  animation: fadeIn 1s forwards;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+  }
+}
+
 .login_box {
   width: 1250px;
   height: 800px;
@@ -19,23 +49,38 @@ img {
   box-shadow: 1px 4px 22px -8px #0004;
   display: flex;
   overflow: hidden;
+  animation: slideIn 1s forwards;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -150%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
 .login_box .left {
   width: 41%;
   height: 100%;
   padding: 25px 25px;
 }
+
 .login_box .right {
   width: 59%;
   height: 100%;
 }
+
 .left .top_link a {
   color: #452a5a;
   font-weight: 400;
 }
+
 .left .top_link {
   height: 20px;
 }
+
 .left .contact {
   display: flex;
   align-items: center;
@@ -45,10 +90,12 @@ img {
   width: 73%;
   margin: auto;
 }
+
 .left h3 {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .left input {
   border: none;
   width: 80%;
@@ -61,9 +108,11 @@ img {
   font-weight: 600;
   font-size: 14px;
 }
+
 .left {
   background: linear-gradient(-45deg, #dcd7e0, #fff);
 }
+
 .submit {
   border: none;
   padding: 15px 70px;
@@ -90,6 +139,7 @@ img {
   position: relative;
   transform: translate(0%, 45%);
 }
+
 .right-text h2 {
   display: block;
   width: 100%;
@@ -97,6 +147,7 @@ img {
   font-size: 50px;
   font-weight: 500;
 }
+
 .right-text h5 {
   display: block;
   width: 100%;
@@ -114,20 +165,24 @@ img {
   bottom: 70px;
   transform: translate(-50%, 0%);
 }
+
 .top_link img {
   width: 28px;
   padding-right: 7px;
   margin-top: -3px;
 }
+
 @media (min-width: 200px) and (max-width: 600px) {
   .login_box {
     flex-direction: column;
     width: 90%;
     height: 90%;
   }
+
   .login {
     height: 700px;
   }
+
   .login_box .left {
     width: 100%;
     height: 60%;
@@ -139,6 +194,7 @@ img {
     width: 100%;
     height: 40%;
   }
+
   .submit {
     border: none;
     padding: 10px 40px;
@@ -153,6 +209,7 @@ img {
     -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
     box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
   }
+
   .right {
     background: url(https://www.nerdwallet.com/assets/blog/wp-content/uploads/2018/01/why-kei-51455-1440x864.jpg);
     color: #fff;
@@ -161,12 +218,13 @@ img {
     background-size: cover;
     order: 1;
   }
-  
+
   .right .right-text {
     height: 100%;
     position: relative;
     transform: translate(0%, 45%);
   }
+
   .right-text h2 {
     display: block;
     width: 100%;
@@ -174,11 +232,44 @@ img {
     font-size: 30px;
     font-weight: 500;
   }
+
   .right-text h5 {
     display: block;
     width: 100%;
     text-align: center;
     font-size: 13px;
     font-weight: 400;
+  }
+}
+
+
+/* style.css */
+
+/* Existing styles remain unchanged */
+
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.rain-drop {
+  position: absolute;
+  background: #7ec0ee; /* Adjust color as needed */
+  width: 2px;
+  height: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
   }
 }
