@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
 import ActionAreaCard from "../../components/common/Commoncard.jsx";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import './style.css';
 
@@ -17,6 +18,12 @@ const Garage = () => {
         console.error("Error fetching cars:", error);
       });
   }, []); // Empty dependency array ensures useEffect runs only once on component mount
+
+   // Click handler for each card
+   const handleCardClick = (carId) => {
+    // Navigate to car details page with specific car ID
+    // You can define the route structure in your React Router configuration
+  };
 
   return (
     <div >
@@ -37,6 +44,7 @@ const Garage = () => {
               fair={car.fair}
               type={car.type}
               city={car.city}
+              onClick={() => handleCardClick(car._id)} 
             />
           </Grid>
         ))}

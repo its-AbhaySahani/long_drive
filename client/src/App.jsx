@@ -15,6 +15,7 @@ import Login from "./pages/addcar/Authorization.jsx";
 import ViewCar from "./pages/ViewAddedCar/ViewAddedCar.jsx";
 import userContext from "./context/userContext.jsx";
 import Garage from "./pages/carFactory/Garage.jsx"
+import CarDetails from "./pages/carDetails/Cardetails.jsx";
 import { useState } from "react";
 
 
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/viewcar" element={<ViewCar />} />
+                <Route path="/cars/:carId" element={<CarDetails/>} /> 
             </Routes>
           </Router>
         </div>

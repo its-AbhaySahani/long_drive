@@ -67,4 +67,20 @@ router.delete('/delete/cars/:carId', async (req, res) => {
     }
 });
 
+
+// GET car details by carId
+router.get('/cars/:carId', async (req, res) => {
+    try {
+        const car = await Car.findOne({ carId: req.params.carId });
+        if (!car) {
+            return res.status(404).json({ error: 'Car not found' });
+        }
+        res.json(car);
+    } catch (error) {
+        console.error('Error fetching car details:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 module.exports = router;
