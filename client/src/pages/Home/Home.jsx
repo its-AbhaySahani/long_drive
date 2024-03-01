@@ -44,7 +44,7 @@ const HomePage = () => {
           params: filterOptions,
         });
         setFilteredCars(response.data);
-      } catch (error) {
+      } catch (error) {    
         console.error("Error fetching filtered cars:", error);
       }
     };
@@ -59,7 +59,7 @@ const HomePage = () => {
           <div className="head-subtext"> Choose Your Route </div>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <div style={{ display: "flex", gap: "10px", margin: "10px" }}>
-              <DateTimePicker
+              <DateTimePicker   
                 label="Start Time"
                 viewRenderers={{
                   hours: renderTimeViewClock,
@@ -100,6 +100,7 @@ const HomePage = () => {
                   <MenuItem value={"Amritsar"}>Amritsar</MenuItem>
                   <MenuItem value={"Ludhiana"}>Ludhiana</MenuItem>
                   <MenuItem value={"Chandigarh"}>Chandigarh</MenuItem>
+                  <MenuItem value={"Sambalpur"}>Sambalpur</MenuItem>
                 </Select>
               </FormControl>
             </div>
