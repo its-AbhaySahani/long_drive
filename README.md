@@ -3,11 +3,16 @@
 
 ### Project Name :-  Long Drive : peer-to-peer vehicle rental  platform
 
-### Important Links:
-1. **Netlify Link** : https://longdrive.netlify.app/
-2. **Figma Link** : https://www.figma.com/file/vLmZi6o35G3naNwTovaxiB/LongDrive?type=design&node-id=0%3A1&mode=design&t=TiCNMu5MSFDYYs1r-1
-3. **PostMan Documentation:** https://documenter.getpostman.com/view/32360617/2s9YsT6UPA
-4. **Youtube  Demo:** https://www.youtube.com/watch?v=NLOMU4ItkOs
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Problem Statement](#problem-statement)
+3. [Proposed Solution](#proposed-solution)
+4. [Key Features](#key-features)
+5. [Project Structure](#project-structure)
+6. [API Testing](#api-testing)
+7. [Important Links](#important-links)
+
+
 ### Class Test : Deploying server on Render
 Github Repo link : https://github.com/its-AbhaySahani/MERN-Basics
 Render Live link: https://mern-basics.onrender.com/students
@@ -114,6 +119,16 @@ Contains all routes related to client side requests.
 
 - #### Database : conn.js
 Database used is MongoDB atlas, it's a cloud based NoSQL database provided by mongoDB
+
+## API Testing
+Used PostMan for API Testing and Documentations.
+[Documentation Link](https://documenter.getpostman.com/view/32360617/2s9YsT6UPA)
+
+## Important Links
+- [Netlify Link](https://longdrive.netlify.app/)
+- [Figma Link](https://www.figma.com/file/vLmZi6o35G3naNwTovaxiB/LongDrive?type=design&node-id=0%3A1&mode=design&t=TiCNMu5MSFDYYs1r-1)
+- [PostMan Documentation](https://documenter.getpostman.com/view/32360617/2s9YsT6UPA)
+- [Youtube Demo](https://www.youtube.com/watch?v=NLOMU4ItkOs)
 
 
 
