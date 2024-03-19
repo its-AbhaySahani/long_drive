@@ -72,13 +72,6 @@ Middleware are functions that run at specific stages of a pipeline.
 - Type of event (‘init’, ‘validate’, ‘save’, ‘remove’)
 - A callback that is executed with this referencing the model instance
 
-### Used PostMan  for API Testing and Documentations :
-Postman allows you to test APIs using various HTTP methods like GET, POST, PUT etc.,
-
-Documentation Link : https://documenter.getpostman.com/view/32360617/2s9YsT6UPA 
-
-
-
 ## About Project Structure :
 
 ### Server Side : Backend structure
