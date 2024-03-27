@@ -23,3 +23,26 @@
 .hero::before{
   background-image: linear-gradient(to bottom, #121212, #12121255), url("https://w.wallha.com/ws/14/yWY4J2td.jpg");
 }
+
+.search-button {
+  background-color: #ff5672; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.search-button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  
+  
+}

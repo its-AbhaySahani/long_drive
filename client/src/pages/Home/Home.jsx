@@ -106,7 +106,7 @@ const HomePage = () => {
             </div>
           </LocalizationProvider>
           <a href={"/LongDrive/#/Search/" + location}>
-            <Button>Search</Button>
+          <button className="search-button">Search</button>
           </a>
         </div>
       </HomeSection>
