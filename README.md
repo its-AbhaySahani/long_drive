@@ -6,11 +6,12 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Problem Statement](#problem-statement)
-3. [Proposed Solution](#proposed-solution)
-4. [Key Features](#key-features)
-5. [Project Structure](#project-structure)
-6. [API Testing](#api-testing)
-7. [Important Links](#important-links)
+3. [Existing Solutions](#existing-solutions)
+4. [Proposed Solution](#proposed-solution)
+5. [Key Features](#key-features)
+6. [Project Structure](#project-structure)
+7. [API Testing](#api-testing)
+8. [Important Links](#important-links)
 
 
 ### Class Test : Deploying server on Render
@@ -26,13 +27,10 @@ Welcome to Long Drive! Long Drive is a peer-to-peer Vehicle rental platform desi
 In today's dynamic automotive landscape, individuals seek the convenience of renting vehicles for various purposes. Long Drive aims to provide a comprehensive solution, offering users a seamless experience for renting cars/Bikes.
 
 
+## Existing Solutions
+- [Zoomcar](https://www.zoomcar.com/)
+- [Revv](https://www.revv.co.in/)
 
-### What are existing similar solutions?
-
-- Zoomcar  https://www.zoomcar.com/
-Car rental service in India
-
-- Revv    https://www.revv.co.in/
 
 
 
@@ -45,7 +43,7 @@ Long Drive platform proposes an inclusive solution that encompasses:
 - Long Drive proposes an inclusive solution that focuses solely on car/bike rentals, providing users with features like browsing rental cars, bikes,  filtering and searching based on various parameters, viewing detailed car information, and managing rental history.
 - User also give with the feature of earning Money by giving thier car on rent which make the app more unique.
 
-## Key Features :
+## Key Features 
 
 ### Renting Cars
 
@@ -54,6 +52,7 @@ Long Drive platform proposes an inclusive solution that encompasses:
 - **Car Details:** View detailed information about each rental car, including images, specifications, and pricing.
 - **Rent a Car/Bike:** Users can select a rental period, provide payment details, and confirm their car rental.
 - **Rental History:** Users can view their past and current car rental history.
+- **Add Car:** User can add 
 
 ### Renting User's Car Feature ( Earn Money): 
 - **Add Car:** User can add their vehicle on rent ing platform by providing necessary details like VIN number, Make, Model etc.
@@ -72,18 +71,17 @@ Middleware are functions that run at specific stages of a pipeline.
 - Type of event (‘init’, ‘validate’, ‘save’, ‘remove’)
 - A callback that is executed with this referencing the model instance
 
-## About Project Structure :
+## Project Structure 
 
-### Server Side : Backend structure
-- #### Routes : Admin Side  Route Handling
-- Contains all routes related to admin panel.
-1. Signin and Signout Routes
-2.  Dashboard Route
-3. Add rent car route
-4.  View All Rented Cars Route
-5. Update Car Details Route
-6. Delete Car Details Route
-7. Add , update and delete sale car informations 
+- **Server Side:** Backend structure
+- **Routes:** Admin Side Route Handling
+- **Signin and Signout Routes**
+- **Dashboard Route**
+- **Add rent car route**
+- **View All Rented Cars Route**
+- **Update Car Details Route**
+- **Delete Car Details Route**
+- **Add, update and delete sale car informations**
 
 #### Routes : Client/customer side  Route Handling
 Contains all routes related to client side requests.
