@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './CarDetails.css'; // Import CSS file for styling
-
+import styled from 'styled-components';
 const CarDetails = () => {
   const { carId } = useParams(); // Get carId from URL params
   const [car, setCar] = useState(null);
@@ -44,7 +44,9 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="car-details-container">
+     <StyledCarDetails>
+
+     
       <img src={car.image} alt={car.model} className="car-image" />
       <div className="car-info">
       
@@ -55,11 +57,37 @@ const CarDetails = () => {
         <p>Price: {car.fair}</p>
         <p>Mileage: {car.mileage}</p>
         <p>Seats: {car.seat}</p>
+        <p>Location: {car.city}</p>
+
         {/* Add more details as needed */}
+        <div className="car-image">
+        {/* Display car image here */}
+        </div>
+        <div className="fixed-image"></div>
         <button className="rent-button" onClick={handleRentNow}>Rent Now</button> {/* Rent Now button */}
       </div>
-    </div>
+      </StyledCarDetails>
   );
 };
+
+
+
+const StyledCarDetails = styled.div`
+
+ 
+`
+const StyledCarInfo = styled.div`
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  width: 50%; 
+  padding: 20px; 
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  margin-left: 20px; 
+  position: relative; 
+`
 
 export default CarDetails;
